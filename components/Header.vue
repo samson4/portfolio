@@ -18,7 +18,7 @@
               <button class="hover:bg-[#fb923c] py-2 px-4 rounded-full border-rose-500">About</button>
             </div>
             <div class="button-div ">
-              <button class="hover:bg-[#fb923c] transition-color delay-100 hover:text-white py-2 px-4 border border-[#f75023] rounded-full ">contact</button>
+              <button class="hover:bg-[#fb923c] transition-color delay-100 hover:text-white min-w-[180px] border border-[#f75023] rounded-full ">Contact</button>
             </div>
           </ul>
         </div>

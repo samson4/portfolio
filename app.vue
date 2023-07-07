@@ -18,8 +18,10 @@
 <div class="my-12">
   <PortfolioFilter />
 </div>
+
   <Skills />
-  <!-- <Services/> -->
+  <Services/>
+  
 </template>
 
 

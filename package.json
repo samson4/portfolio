@@ -16,6 +16,7 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.8.0"
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "vanilla-tilt-vue": "^0.1.3"
   }
 }

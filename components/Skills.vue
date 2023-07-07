@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="atom-img ">
-            <div class="container border float-right">
+            <div class="container float-right">
                 <img class="float-right" src="/service.png" alt="">
             </div>
         </div>
