@@ -21,7 +21,7 @@
 
   <Skills />
   <Services/>
-  
+  <Footer />
 </template>
 
 

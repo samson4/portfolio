@@ -9,40 +9,45 @@ With a full time job and various side projects in play my time is limited, but I
     <div class="service-list my-16  w-full">
       <div class="inner flex flex-wrap w-[80%] " @mouseenter="">
 
-            <div class="w-[45%] hover:rotate-[6deg] h-[400px] transition-all flex shadow-2xl rounded-lg h-full mb-12">
-              <span class=" min-w-[40%] text-center pt-6"><Icon name="icon-park-twotone:anchor-one" class=""></Icon></span>
+            <div class="w-[45%] hover:rotate-[6deg] h-[400px] transition-all flex shadow-2xl rounded-lg mb-12">
+              <span class=" min-w-[40%] text-center pt-6"><Icon name="material-symbols:restaurant-rounded" class=""></Icon></span>
               <div class="service-inner "> 
-                <h3 class="max-w-[300px] ">Online Food Ordering and </h3>
+                <h3 class="max-w-[300px] ">Online Food Ordering and delivery </h3>
                 <p class="max-w-[220px]">Leverage my decades-long experience with AWS to architect robust, scalable, and tailored cloud solutions that suit your business requirements and enhance operational efficiency.</p>
-                <Icon class="w-[30px] h-[30px] ml-2" name="logos:django-icon"></Icon>
-            <Icon class="w-[30px] h-[30px] ml-2" name="devicon:html5"></Icon>
-            <Icon class="w-[30px] h-[30px] ml-2" name="devicon:javascript"></Icon>
-            <Icon class="w-[30px] h-[30px] ml-2" name="devicon:bootstrap"></Icon>
+              <div class="stacks flex justify-evenly mt-3">
+                <Icon class="w-[30px] h-[30px] " name="logos:django-icon"></Icon>
+                <Icon class="w-[30px] h-[30px] " name="devicon:html5"></Icon>
+                <Icon class="w-[30px] h-[30px] " name="devicon:javascript"></Icon>
+                <Icon class="w-[30px] h-[30px] " name="devicon:bootstrap"></Icon>
+              </div>
               </div>
             </div>
           
        
         <div class="w-[45%] hover:rotate-[6deg] h-[400px] transition-all flex shadow-2xl  rounded-lg mb-12">
-          <span class=" min-w-[40%] text-center pt-6 "><Icon name="simple-icons:react" class=""></Icon></span>
+          <span class=" min-w-[40%] text-center pt-6 "><Icon name="emojione:movie-camera" class=""></Icon></span>
           <div class="service-inner "> 
             <h3 class="max-w-[300px] ">HDToday Clone</h3>
           <p class="max-w-[220px]">Leverage my decades-long experience with AWS to architect robust, scalable, and tailored cloud solutions that suit your business requirements and enhance operational efficiency.</p>
-          <Icon class="w-[30px] h-[30px] ml-2" name="logos:django-icon"></Icon>
-            <Icon class="w-[30px] h-[30px] ml-2" name="devicon:html5"></Icon>
-            <Icon class="w-[30px] h-[30px] ml-2" name="devicon:javascript"></Icon>
-            <Icon class="w-[30px] h-[30px] ml-2" name="devicon:bootstrap"></Icon>
-        </div>
+            <div class="stacks flex justify-evenly mt-3">
+              <Icon class="w-[30px] h-[30px]" name="devicon:nodejs"></Icon>
+              <Icon class="w-[30px] h-[30px]" name="devicon:express"></Icon>
+              <Icon class="w-[30px] h-[30px]" name="devicon:mongodb"></Icon>
+              <Icon class="w-[30px] h-[30px]" name="devicon:vuejs"></Icon>
+            </div>
+          </div>
         </div>
 
         <div class="w-[45%] hover:rotate-[6deg] h-[400px] transition-all flex shadow-2xl rounded-lg mb-12">
-          <span class="min-w-[40%] text-center pt-6"><Icon name="ri:contacts-line"></Icon></span>
+          <span class="min-w-[40%] text-center pt-6"><Icon name="mdi:blogger"></Icon></span>
           <div class="service-inner "> 
             <h3 class="max-w-[300px]">Django Blog</h3>
             <p class="w-[220px]">Leverage my decades-long experience with AWS to architect robust, scalable, and tailored cloud solutions that suit your business requirements and enhance operational efficiency.</p>        
-            <Icon class="w-[30px] h-[30px] ml-2" name="logos:django-icon"></Icon>
-            <Icon class="w-[30px] h-[30px] ml-2" name="devicon:html5"></Icon>
-            <Icon class="w-[30px] h-[30px] ml-2" name="devicon:javascript"></Icon>
-            <Icon class="w-[30px] h-[30px] ml-2" name="devicon:bootstrap"></Icon>
+            <div class="stacks flex justify-between mt-3 ">
+            <Icon class="w-[30px] h-[30px] " name="devicon:djangorest"></Icon>
+            <Icon class="w-[30px] h-[30px] " name="devicon:vuejs"></Icon>
+            <Icon class="w-[30px] h-[30px] " name="devicon:bootstrap"></Icon>
+          </div>
           </div>
           <button></button>
         </div>
