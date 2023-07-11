@@ -7,11 +7,14 @@
 With a full time job and various side projects in play my time is limited, but I can generally provide a technical talk on a topic of your choice.</p>
     </div>
     <div class="service-list my-16  w-full">
-      <div class="inner flex flex-wrap w-[80%] " @mouseenter="">
-
-            <div class="w-[45%] hover:rotate-[6deg] h-[400px] transition-all flex shadow-2xl rounded-lg mb-12">
+      <div class="absolute z-0 mt-[-140px]">
+        <img src="5.png" alt="">
+      </div>
+      <div class="inner relative z-10 flex flex-wrap w-[80%] " @mouseenter="">
+        
+            <div class="w-[45%] hover:rotate-[2deg] h-[400px] transition-all flex shadow-2xl rounded-2xl mb-12 bg-white transparent">
               <span class=" min-w-[40%] text-center pt-6"><Icon name="material-symbols:restaurant-rounded" class=""></Icon></span>
-              <div class="service-inner "> 
+              <div class="service-inner m-auto"> 
                 <h3 class="max-w-[300px] ">Online Food Ordering and delivery </h3>
                 <p class="max-w-[220px]">Leverage my decades-long experience with AWS to architect robust, scalable, and tailored cloud solutions that suit your business requirements and enhance operational efficiency.</p>
               <div class="stacks flex justify-evenly mt-3">
@@ -20,13 +23,16 @@ With a full time job and various side projects in play my time is limited, but I
                 <Icon class="w-[30px] h-[30px] " name="devicon:javascript"></Icon>
                 <Icon class="w-[30px] h-[30px] " name="devicon:bootstrap"></Icon>
               </div>
+              <div class="text-left">
+              <button class="hover:bg-black hover:text-white border-2 border-[#f75023] rounded-lg my-6 px-1 transition-all"><a href="https://github.com/samson4/foodapp" target="_blank" rel="noopener noreferrer"><span class="px-1"><Icon name="skill-icons:github-dark" ></Icon></span>Source Code </a></button>
+            </div>
               </div>
             </div>
           
        
         <div class="w-[45%] hover:rotate-[6deg] h-[400px] transition-all flex shadow-2xl  rounded-lg mb-12">
           <span class=" min-w-[40%] text-center pt-6 "><Icon name="emojione:movie-camera" class=""></Icon></span>
-          <div class="service-inner "> 
+          <div class="service-inner m-auto"> 
             <h3 class="max-w-[300px] ">HDToday Clone</h3>
           <p class="max-w-[220px]">Leverage my decades-long experience with AWS to architect robust, scalable, and tailored cloud solutions that suit your business requirements and enhance operational efficiency.</p>
             <div class="stacks flex justify-evenly mt-3">
@@ -35,12 +41,16 @@ With a full time job and various side projects in play my time is limited, but I
               <Icon class="w-[30px] h-[30px]" name="devicon:mongodb"></Icon>
               <Icon class="w-[30px] h-[30px]" name="devicon:vuejs"></Icon>
             </div>
+            <div class="text-left">
+              <button class="hover:bg-black hover:text-white border-2 border-[#f75023] rounded-lg my-6 px-1 transition-all"><a href="https://github.com/samson4/hdtoday" target="_blank" rel="noopener noreferrer"><span class="px-1"><Icon name="skill-icons:github-dark" ></Icon></span>Source Code </a></button>
+            </div>
+            
           </div>
         </div>
 
         <div class="w-[45%] hover:rotate-[6deg] h-[400px] transition-all flex shadow-2xl rounded-lg mb-12">
           <span class="min-w-[40%] text-center pt-6"><Icon name="mdi:blogger"></Icon></span>
-          <div class="service-inner "> 
+          <div class="service-inner m-auto"> 
             <h3 class="max-w-[300px]">Django Blog</h3>
             <p class="w-[220px]">Leverage my decades-long experience with AWS to architect robust, scalable, and tailored cloud solutions that suit your business requirements and enhance operational efficiency.</p>        
             <div class="stacks flex justify-between mt-3 ">
@@ -48,8 +58,11 @@ With a full time job and various side projects in play my time is limited, but I
             <Icon class="w-[30px] h-[30px] " name="devicon:vuejs"></Icon>
             <Icon class="w-[30px] h-[30px] " name="devicon:bootstrap"></Icon>
           </div>
+          <div class="text-left">
+              <button class="hover:bg-black hover:text-white border-2 border-[#f75023] rounded-lg my-6 px-1 transition-all"><a href="https://github.com/samson4/Blog-backend" target="_blank" rel="noopener noreferrer"><span class="px-1"><Icon name="skill-icons:github-dark" ></Icon></span>Source Code </a></button>
+            </div>
           </div>
-          <button></button>
+          
         </div>
         
 

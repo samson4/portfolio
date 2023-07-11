@@ -44,10 +44,10 @@
             
            
         </div>
-        <div class="portfolio-list flex my-12 max-w-[1200px] m-auto flex-wrap justify-around ">
+        <div class="portfolio-list flex my-12 max-w-[1200px] m-auto flex-wrap justify-around relative z-0">
             <div class="inner-portfolio-list mx-[16px] " v-for="cert in certs">
                 <ul>
-                    <div class="cert mb-6 bg-white">
+                    <div class="cert mb-6 relative z-0">
                         <li><img class="hover:scale-125 transition-all" :src="cert.img" alt=""></li>
                     </div>
                 </ul>
@@ -55,7 +55,7 @@
         </div>
         </div>
         <div>
-            <div class="float-right relative  mt-[-160px]  ">
+            <div class="float-right relative z-10  mt-[-160px]  ">
                 <img src="/2.png" class="" alt="">
             </div>
         </div>
@@ -92,7 +92,7 @@ ul li{
     font-size: 18px;
 }
 .cert li img{
-    background-color: aliceblue;
+    /* background-color: aliceblue;......''''[] */
     max-width: 360px;
     max-height: 350px;
     border-radius: 6px;
