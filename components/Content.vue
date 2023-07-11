@@ -30,7 +30,7 @@
 
         <div class="avatar ml-16">
             <div class="image">
-                <img class="profilePictureHero max-h-[733px] w-[733px] border-red" src="/GECH0776.jpg" alt="profile pic">
+                <img class="profilePictureHero max-h-[733px] w-[733px] border-red" src="https://res.cloudinary.com/dpj8cuqfq/image/upload/v1689081074/mhzcubtmxkq3cjingnpu.jpg" alt="profile pic">
             </div>
 
         </div>

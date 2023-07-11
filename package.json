@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",
+    "cloudinary-core": "^2.13.0",
     "vanilla-tilt-vue": "^0.1.3"
   }
 }
