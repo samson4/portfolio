@@ -8,7 +8,7 @@ With a full time job and various side projects in play my time is limited, but I
     </div>
     <div class="service-list my-16  w-full">
       <div class="absolute z-0 mt-[-140px]">
-        <img src="5.png" alt="">
+        <img src="/5.png" alt="">
       </div>
       <div class="inner relative z-10 flex flex-wrap w-[80%] " @mouseenter="">
         
