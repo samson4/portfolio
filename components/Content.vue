@@ -22,7 +22,7 @@
 
           <div class="text w-full h-[50%]">
             <p>
-                Based in the ever-evolving world of technology, I have dedicated four decades to mastering my craft in software development. With a particular passion for Amazon Web Services (AWS), I have spent the last decade immersing myself in this domain, becoming a recognized authority in architecting and implementing cloud solutions.  
+                As a seasoned web developer and system administrator, I have dedicated years mastering my craft in software development and IT operations. With a particular passion for building scalable and reliable web applications, I have spent a couple of years immersing myself in the world of computing and have become a experienced person in building and implementing IT solutions.  
             </p>
           </div>
 

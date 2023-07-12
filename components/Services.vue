@@ -3,8 +3,8 @@
     <div class="container-offer ">
         <span class="font-semibold text-[#f75023] text-[22px]">Projects</span>
         <h3 class="font-semi text-[42px] mb-3">What I Offer to Clients</h3>
-        <p class="text-[#6f6b80]">With a focus on software development, AWS solutions, diversity advocacy, and mentoring, I provide a range of services that bring value to your organization and foster an inclusive, innovative culture.<br>
-With a full time job and various side projects in play my time is limited, but I can generally provide a technical talk on a topic of your choice.</p>
+        <p class="text-[#6f6b80]">With a focus on software development, AWS solutions, Netwoking and System Administration, I provide a range of services that bring value to your organization and foster an innovative culture.<br>
+Explore into my full time and various side projects that can provide a general view of what I can provide for your company.</p>
     </div>
     <div class="service-list my-16  w-full">
       <div class="absolute z-0 mt-[-140px]">
@@ -16,7 +16,7 @@ With a full time job and various side projects in play my time is limited, but I
               <span class=" min-w-[40%] text-center pt-6"><Icon name="material-symbols:restaurant-rounded" class=""></Icon></span>
               <div class="service-inner m-auto"> 
                 <h3 class="max-w-[300px] ">Online Food Ordering and delivery </h3>
-                <p class="max-w-[220px]">Leverage my decades-long experience with AWS to architect robust, scalable, and tailored cloud solutions that suit your business requirements and enhance operational efficiency.</p>
+                <p>A web app that automates the traditional ordering and delivery of food for restaurant customers. The system incorporates third party Apis like "mapbox" for restaurant locations and "Yenepay" For easy payment system </p>
               <div class="stacks flex justify-evenly mt-3">
                 <Icon class="w-[30px] h-[30px] " name="logos:django-icon"></Icon>
                 <Icon class="w-[30px] h-[30px] " name="devicon:html5"></Icon>
@@ -34,7 +34,7 @@ With a full time job and various side projects in play my time is limited, but I
           <span class=" min-w-[40%] text-center pt-6 "><Icon name="emojione:movie-camera" class=""></Icon></span>
           <div class="service-inner m-auto"> 
             <h3 class="max-w-[300px] ">HDToday Clone</h3>
-          <p class="max-w-[220px]">Leverage my decades-long experience with AWS to architect robust, scalable, and tailored cloud solutions that suit your business requirements and enhance operational efficiency.</p>
+          <p class="max-w-[220px]">A side project that mimics a movie streaming website called HDToday built with MEVN stack and Vuetify as a UI library.An admin uploads a movie and is displayed for users.</p>
             <div class="stacks flex justify-evenly mt-3">
               <Icon class="w-[30px] h-[30px]" name="devicon:nodejs"></Icon>
               <Icon class="w-[30px] h-[30px]" name="devicon:express"></Icon>
@@ -52,7 +52,7 @@ With a full time job and various side projects in play my time is limited, but I
           <span class="min-w-[40%] text-center pt-6"><Icon name="mdi:blogger"></Icon></span>
           <div class="service-inner m-auto"> 
             <h3 class="max-w-[300px]">Django Blog</h3>
-            <p class="w-[220px]">Leverage my decades-long experience with AWS to architect robust, scalable, and tailored cloud solutions that suit your business requirements and enhance operational efficiency.</p>        
+            <p class="w-[220px]">A re-implementation for a Django Blog tutorial series by Corey M Schafer which is found on Youtube. I remade the app with Django Rest framework and vue.js. Also added more functionalities like search support.</p>        
             <div class="stacks flex justify-between mt-3 ">
             <Icon class="w-[30px] h-[30px] " name="devicon:djangorest"></Icon>
             <Icon class="w-[30px] h-[30px] " name="devicon:vuejs"></Icon>

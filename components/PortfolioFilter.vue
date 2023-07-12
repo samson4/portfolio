@@ -29,18 +29,7 @@
                 </ul>
                 
             </div>
-            <div>
-                <ul>
-                    <li><RouterLink to="#">Certifications</RouterLink></li>
-                </ul>
-                
-            </div>
-            <div>
-                <ul>
-                    <li><RouterLink to="#">Certifications</RouterLink></li>
-                </ul>
-                
-            </div>
+           
             
            
         </div>

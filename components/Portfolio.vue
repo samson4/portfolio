@@ -7,7 +7,7 @@
             <span class="text-[#fb923c] text-2xl font-normal leading-6 mb-5">Portfolio</span>
             <div class="explain ">
                 <h3 class="text-5xl font-semibold py-6 ">Impactful Initiatives and Solutions</h3>
-                <p class="font-normal max-w-[680px] m-auto text-[#6f6b80]">Explore a range of my significant contributions in cloud computing and innovation, demonstrating a blend of technical acumen and commitment to inclusive practices in technology.</p>
+                <p class="font-normal max-w-[680px] m-auto text-[#6f6b80]">Explore a range of my significant contributions in Networking, Security, AWS and Web Development, demonstrating a blend of technical acumen and commitment to best practices in technology.</p>
                 
             </div>
         </div>

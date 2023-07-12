@@ -15,7 +15,7 @@
               <button class="hover:bg-[#fb923c]  py-2 px-4 rounded-full">Home</button>
             </div>
             <div class="button-div ">
-              <button class="hover:bg-[#fb923c] py-2 px-4 rounded-full border-rose-500">About</button>
+              <button class="hover:bg-[#fb923c] py-2 px-4 rounded-full border-rose-500"><a href="#about">About</a></button>
             </div>
             <div class="button-div ">
               <button class="hover:bg-[#fb923c] transition-color delay-100 hover:text-white min-w-[180px] border border-[#f75023] rounded-full "><a href="mailto:samsonkebede4@gmail.com">Contact</a></button>
