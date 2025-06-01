@@ -12,7 +12,7 @@
 
   <Projects />
 
-  <Portfolio />
+  <!-- <Portfolio /> -->
   <!-- <div class="my-12">
     <PortfolioFilter />
   </div> -->
