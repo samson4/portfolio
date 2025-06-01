@@ -10,17 +10,14 @@
         <motion.div :variants="itemVariants" class="order-2 lg:order-1">
           <div class="relative">
             <video
-              src="Bruce Almighty types really fast.mp4"
+              src="Bruce_Almighty.mp4"
               loop
               autoplay
               muted
               alt="About Samson"
               class="rounded-2xl object-cover w-full h-[400px] sm:h-[500px] lg:h-[600px]"
             >
-              <source
-                src="Bruce Almighty types really fast.mp4"
-                type="video/mp4"
-              />
+              <source src="Bruce_Almighty.mp4" type="video/mp4" />
             </video>
             <motion.div
               :animate="{
