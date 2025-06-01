@@ -65,7 +65,7 @@ const navItems = [
           >
             <a
               tag="a"
-              href="mailto:samsonkebede4@gmail.com?subject=Hello&amp;body=Dear%20friend"
+              href="mailto:samsonkebede4@gmail.com"
               class="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6"
             >
               Contact Me
