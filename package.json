@@ -18,6 +18,8 @@
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",
     "cloudinary-core": "^2.13.0",
+    "lucide-vue-next": "^0.511.0",
+    "motion-v": "^1.1.1",
     "vanilla-tilt-vue": "^0.1.3"
   }
 }

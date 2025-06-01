@@ -1,38 +1,37 @@
 <template>
   <div class="content">
-     <Header />
-  <div class="flex mx-[250px]">
-    <div>
-      <Content />
+    <Header />
+    <div class="flex mx-[250px]">
+      <div>
+        <Content />
+      </div>
     </div>
   </div>
-  
-    
-</div>
 
-      <Process />
+  <Process />
 
   <Projects />
 
   <Portfolio />
-<div class="my-12">
-  <PortfolioFilter />
-</div>
+  <!-- <div class="my-12">
+    <PortfolioFilter />
+  </div> -->
 
   <Skills />
-  <Services/>
+  <Services />
+  <Contact />
   <Footer />
 </template>
 
-
 <script setup>
- 
+const mySkills = [
+  { name: "JavaScript", icon: "⚛️" },
+  // ... your skills
+];
 </script>
 
-
 <style scoped>
-.content{
-  background-image: url("/portfolioBackground.jpg");  
-}
-
+/* .content {
+  background-image: url("/portfolioBackground.jpg");
+} */
 </style>

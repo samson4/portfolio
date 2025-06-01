@@ -1,147 +1,257 @@
-<template >
-  <div class="services my-[1250px] ">
-    <div class="container-offer ">
-        <span class="font-semibold text-[#f75023] text-[22px]">Projects</span>
-        <h3 class="font-semi text-[42px] mb-3">What I Offer to Clients</h3>
-        <p class="text-[#6f6b80]">With a focus on software development, AWS solutions, Netwoking and System Administration, I provide a range of services that bring value to your organization and foster an innovative culture.<br>
-Explore into my full time and various side projects that can provide a general view of what I can provide for your company.</p>
-    </div>
-    <div class="service-list my-16  w-full">
-      <div class="absolute z-0 mt-[-140px]">
-        <img src="/5.png" alt="">
-      </div>
-      <div class="inner relative z-10 flex flex-wrap w-[80%] " @mouseenter="">
-        
-            <div class="w-[45%] hover:rotate-[2deg] h-[400px] transition-all flex shadow-2xl rounded-2xl mb-12 bg-white transparent">
-              <span class=" min-w-[40%] text-center pt-6"><Icon name="material-symbols:restaurant-rounded" class=""></Icon></span>
-              <div class="service-inner m-auto"> 
-                <h3 class="max-w-[300px] ">Online Food Ordering and delivery </h3>
-                <p>A web app that automates the traditional ordering and delivery of food for restaurant customers. The system incorporates third party Apis like "mapbox" for restaurant locations and "Yenepay" For easy payment system </p>
-              <div class="stacks flex justify-evenly mt-3">
-                <Icon class="w-[30px] h-[30px] " name="logos:django-icon"></Icon>
-                <Icon class="w-[30px] h-[30px] " name="devicon:html5"></Icon>
-                <Icon class="w-[30px] h-[30px] " name="devicon:javascript"></Icon>
-                <Icon class="w-[30px] h-[30px] " name="devicon:bootstrap"></Icon>
-              </div>
-              <div class="text-left">
-              <button class="hover:bg-black hover:text-white border-2 border-[#f75023] rounded-lg my-6 px-1 transition-all"><a href="https://github.com/samson4/foodapp" target="_blank" rel="noopener noreferrer"><span class="px-1"><Icon name="skill-icons:github-dark" ></Icon></span>Source Code </a></button>
-            </div>
-              </div>
-            </div>
-          
-       
-        <div class="w-[45%] hover:rotate-[6deg] h-[400px] transition-all flex shadow-2xl  rounded-lg mb-12">
-          <span class=" min-w-[40%] text-center pt-6 "><Icon name="emojione:movie-camera" class=""></Icon></span>
-          <div class="service-inner m-auto"> 
-            <h3 class="max-w-[300px] ">HDToday Clone</h3>
-          <p class="max-w-[220px]">A side project that mimics a movie streaming website called HDToday built with MEVN stack and Vuetify as a UI library.An admin uploads a movie and is displayed for users.</p>
-            <div class="stacks flex justify-evenly mt-3">
-              <Icon class="w-[30px] h-[30px]" name="devicon:nodejs"></Icon>
-              <Icon class="w-[30px] h-[30px]" name="devicon:express"></Icon>
-              <Icon class="w-[30px] h-[30px]" name="devicon:mongodb"></Icon>
-              <Icon class="w-[30px] h-[30px]" name="devicon:vuejs"></Icon>
-            </div>
-            <div class="text-left">
-              <button class="hover:bg-black hover:text-white border-2 border-[#f75023] rounded-lg my-6 px-1 transition-all"><a href="https://github.com/samson4/hdtoday" target="_blank" rel="noopener noreferrer"><span class="px-1"><Icon name="skill-icons:github-dark" ></Icon></span>Source Code </a></button>
-            </div>
-            
-          </div>
-        </div>
-
-        <div class="w-[45%] hover:rotate-[6deg] h-[400px] transition-all flex shadow-2xl rounded-lg mb-12">
-          <span class="min-w-[40%] text-center pt-6"><Icon name="mdi:blogger"></Icon></span>
-          <div class="service-inner m-auto"> 
-            <h3 class="max-w-[300px]">Django Blog</h3>
-            <p class="w-[220px]">A re-implementation for a Django Blog tutorial series by Corey M Schafer which is found on Youtube. I remade the app with Django Rest framework and vue.js. Also added more functionalities like search support.</p>        
-            <div class="stacks flex justify-between mt-3 ">
-            <Icon class="w-[30px] h-[30px] " name="devicon:djangorest"></Icon>
-            <Icon class="w-[30px] h-[30px] " name="devicon:vuejs"></Icon>
-            <Icon class="w-[30px] h-[30px] " name="devicon:bootstrap"></Icon>
-          </div>
-          <div class="text-left">
-              <button class="hover:bg-black hover:text-white border-2 border-[#f75023] rounded-lg my-6 px-1 transition-all"><a href="https://github.com/samson4/Blog-backend" target="_blank" rel="noopener noreferrer"><span class="px-1"><Icon name="skill-icons:github-dark" ></Icon></span>Source Code </a></button>
-            </div>
-          </div>
-          
-        </div>
-        
-
-      </div>
-    </div>
-  </div>
-</template>
-  
 <script setup>
+import { motion, useInView } from "motion-v";
+import { ref } from "vue";
+import { Github } from "lucide-vue-next";
 
-const options = defineProps(
+const servicesSection = ref(null);
+const isInView = useInView(servicesSection, { once: true, margin: "-100px" });
+
+const projects = [
   {
-    reverse: false, // reverse the tilt direction
+    id: 0,
+    title: "Data Platform",
+    description: `I built a database explorer platform using FastAPI, SQLAlchemy,SQLite and Nuxt(vue) to simplify SQL and PostgreSQL database management that simplifies database development and administration by providing a unified interface for tasks that were previously fragmented. It provided introspection, visualization, and schema/data alteration tools, which improves developer productivity.
+`,
+    technologies: [
+      { icon: "devicon:nuxtjs", name: "Nuxt.js" },
+      { icon: "devicon:vuejs", name: "Vue.js" },
+      { icon: "devicon:fastapi", name: "FastAPI" },
+      { icon: "devicon:sqlite", name: "SQLite" },
+    ],
+    githubUrl: "https://github.com/samson4/bus-backend",
+    icon: "🌐",
+  },
+  {
+    id: 1,
+    title: "Online Food Ordering and Delivery",
+    description:
+      'A web app that automates the traditional ordering and delivery of food for restaurant customers. The system incorporates third party APIs like "mapbox" for restaurant locations and "Yenepay" for easy payment system.',
+    technologies: [
+      { icon: "logos:django-icon", name: "Django" },
+      { icon: "devicon:html5", name: "HTML5" },
+      { icon: "devicon:javascript", name: "JavaScript" },
+      { icon: "devicon:bootstrap", name: "Bootstrap" },
+    ],
+    githubUrl: "https://github.com/samson4/foodapp",
+    icon: "🍕",
+  },
+  {
+    id: 2,
+    title: "HDToday Clone",
+    description:
+      "A side project that mimics a movie streaming website called HDToday built with MEVN stack and Vuetify as a UI library. An admin uploads a movie and is displayed for users.",
+    technologies: [
+      { icon: "devicon:vuejs", name: "Vue.js" },
+      { icon: "devicon:express", name: "Express.js" },
+      { icon: "devicon:nodejs", name: "Node.js" },
+      { icon: "devicon:mongodb", name: "MongoDB" },
+    ],
+    githubUrl: "https://github.com/samson4/hdtoday",
+    icon: "🎬",
+  },
+  {
+    id: 3,
+    title: "Django Blog",
+    description:
+      "A re-implementation for a Django Blog tutorial series by Corey M Schafer. I remade the app with Django Rest framework and Vue.js. Also added more functionalities like search support.",
+    technologies: [
+      { icon: "logos:django-icon", name: "Django" },
+      { icon: "devicon:vuejs", name: "Vue.js" },
+      { icon: "devicon:bootstrap", name: "Bootstrap" },
+    ],
+    githubUrl: "https://github.com/samson4/Blog-backend",
+    icon: "📝",
+  },
+];
 
-max: 35, // max tilt rotation (degrees)
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
-startX: 0, // the starting tilt on the X axis, in degrees.
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
-startY: 0, // the starting tilt on the Y axis, in degrees.
+// Basic Card component (replace with your actual Card component)
+const Card = defineComponent({
+  props: {
+    className: {
+      type: String,
+      default: "",
+    },
+  },
+  setup(props, { slots }) {
+    return () =>
+      h(
+        "div",
+        {
+          class: `bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden ${props.className}`,
+        },
+        slots.default()
+      );
+  },
+});
 
-perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
+// Basic CardContent component (replace with your actual CardContent component)
+const CardContent = defineComponent({
+  props: {
+    className: {
+      type: String,
+      default: "",
+    },
+  },
+  setup(props, { slots }) {
+    return () => h("div", { class: `p-8 ${props.className}` }, slots.default());
+  },
+});
 
-scale: 1, // 2 = 200%, 1.5 = 150%, etc..
-
-speed: 300, // Speed of the enter/exit transition
-
-transition: true, // Set a transition on enter/exit.
-
-axis: null, // What axis should be disabled. Can be X or Y.
-
-reset: true, // If the tilt effect has to be reset on exit.
-
-easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
-
-glare: false, // if it should have a "glare" effect
-
-"max-glare": 1, // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
-
-"glare-prerender": false, // false = VanillaTilt creates the glare elements for you, otherwise
-
-// you need to add .js-tilt-glare>.js-tilt-glare-inner by yourself
-
-"mouse-event-element": null, // css-selector or link to HTML-element what will be listen mouse events
-
-// you need to add .js-tilt-glare>.js-tilt-glare-inner by yourself
-
-gyroscope: true, // Boolean to enable/disable device orientation detection,
-
-gyroscopeMinAngleX: -45, // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element;
-
-gyroscopeMaxAngleX: 45, // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element;
-
-gyroscopeMinAngleY: -45, // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element;
-
-gyroscopeMaxAngleY: 45, // This is the top limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the bottom border of the element;
-
-
-}
-)
+// Basic Button component (replace with your actual Button component)
+const Button = defineComponent({
+  props: {
+    asChild: {
+      type: Boolean,
+      default: false,
+    },
+    variant: {
+      type: String,
+      default: "default",
+    },
+    className: {
+      type: String,
+      default: "",
+    },
+  },
+  setup(props, { slots }) {
+    return () => {
+      const tag = props.asChild ? "a" : "button";
+      let classes = `rounded-full `;
+      if (props.variant === "outline") {
+        classes +=
+          "border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white";
+      }
+      return h(
+        tag,
+        { class: classes + " " + props.className },
+        slots.default ? slots.default() : null
+      );
+    };
+  },
+});
+import { defineComponent, h } from "vue";
 </script>
 
-<style scoped>
-.container-offer{
- max-width: 50%;
- text-align: center;
- margin: 0 25% 0 25%;
-}
-p{
-  line-height: 28px;
-}
-.inner{
-  margin: auto;
-  justify-content: space-between;
-  /* background-color: #f2f2f2; */
-  
-  
-}
-/* .service-inner{
-  float: left;
-} */
+<template>
+  <section id="services" class="py-20 lg:py-32" ref="servicesSection">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        initial="{ opacity: 0, y: 30 }"
+        :animate="isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }"
+        transition="{ duration: 0.6 }"
+        class="text-center mb-16"
+      >
+        <span class="text-orange-500 text-lg sm:text-xl font-medium"
+          >Projects</span
+        >
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6"
+        >
+          What I Offer to Clients
+        </h2>
+        <p class="text-gray-600 text-lg max-w-4xl mx-auto">
+          With a focus on software development, AWS solutions, Networking and
+          System Administration, I provide a range of services that bring value
+          to your organization and foster an innovative culture. Explore my full
+          time and various side projects that can provide a general view of what
+          I can provide for your company.
+        </p>
+      </motion.div>
 
+      <motion.div
+        :variants="containerVariants"
+        initial="hidden"
+        :animate="isInView ? 'visible' : 'hidden'"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-8"
+      >
+        <motion.div
+          v-for="project in projects"
+          :key="project.id"
+          :variants="itemVariants"
+          while-hover="{ y: -10, rotateY: 5 }"
+          class="group"
+        >
+          <Card class="h-full">
+            <CardContent class="p-8">
+              <div class="flex items-start gap-6">
+                <motion.div
+                  while-hover="{ scale: 1.1, rotate: 10 }"
+                  class="text-6xl flex-shrink-0"
+                >
+                  {{ project.icon }}
+                </motion.div>
+                <div class="flex-1">
+                  <h3
+                    class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-500 transition-colors duration-200"
+                  >
+                    {{ project.title }}
+                  </h3>
+                  <p class="text-gray-600 mb-6 leading-relaxed">
+                    {{ project.description }}
+                  </p>
+
+                  <div
+                    v-for="tech in project.technologies"
+                    :key="tech"
+                    class="inline-flex flex-wrap gap-3 mb-6"
+                  >
+                    <span
+                      class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                    >
+                      <Icon
+                        class="w-[30px] h-[30px]"
+                        :name="`${tech.icon}`"
+                      ></Icon>
+                      {{ tech.name }}
+                    </span>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <Button
+                      asChild
+                      variant="outline"
+                      class="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                    >
+                      <a
+                        :href="project.githubUrl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2"
+                      >
+                        <Github size="16" />
+                        Source Code
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </motion.div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+/* Your component-specific styles can go here */
 </style>
