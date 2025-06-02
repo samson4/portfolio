@@ -10,7 +10,7 @@ const projects = [
   {
     id: 0,
     title: "Data Platform",
-    description: `I built a database explorer platform using FastAPI, SQLAlchemy,SQLite and Nuxt(vue) to simplify SQL and PostgreSQL database management that simplifies database development and administration by providing a unified interface for tasks that were previously fragmented. It provided introspection, visualization, and schema/data alteration tools, which improves developer productivity.
+    description: `I built a database explorer platform using FastAPI, SQLAlchemy,SQLite and Nuxt(vue).It simplifies SQL and PostgreSQL database management by providing a unified interface for tasks that were previously fragmented. The platform provided introspection, visualization, and schema/data alteration tools, which improves developer productivity.
 `,
     technologies: [
       { icon: "devicon:nuxtjs", name: "Nuxt.js" },
