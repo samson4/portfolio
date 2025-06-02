@@ -157,6 +157,12 @@ const devOpsTools = ref([
     description: "Web Server",
   },
   {
+    name: "Github Actions",
+    icon: "devicon:githubactions",
+    color: "from-green-400 to-green-600",
+    description: "CI/CD",
+  },
+  {
     name: "Git",
     icon: "devicon:git",
     color: "from-red-400 to-red-600",
