@@ -420,7 +420,7 @@ import { defineComponent, h } from "vue";
         :variants="containerVariants"
         initial="hidden"
         :animate="isInView ? 'visible' : 'hidden'"
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
       >
         <motion.div
           v-for="(tool, index) in devOpsTools"
