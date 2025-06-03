@@ -59,34 +59,50 @@
             :variants="itemVariants"
             class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6 leading-tight"
           >
-            I Craft Powerful Infrastructure and Web Apps
+            I Craft Powerful Infrastructure and empower developers
           </motion.h2>
           <motion.div
             :variants="itemVariants"
             class="space-y-6 text-gray-600 text-lg"
           >
             <p>
-              Samson Kebede is an experienced and accomplished software
-              developer with a remarkable programming journey spanning since
-              teenage days. With a strong foundation built over 6 years of
-              coding expertise, including a year dedicated to System
-              administration, Samson has honed his skills and become an
-              experienced person in the field.
+              With 3+ years of hands-on experience in software development , I
+              specialize in crafting robust web applications and cloud
+              infrastructure using Python, Django, and AWS. My journey began as
+              a teenage coder and evolved into a passion for solving real-world
+              problems through technology.
             </p>
+
             <p>
-              Beyond his technical prowess, Samson has embraced a profound
-              commitment to giving back to the community. With a genuine passion
-              for technology he actively advocates for equal opportunities.
-              Samson's dedication to these principles is evident in his numerous
-              initiatives, where he champions diversity and strives to create a
-              welcoming environment for all.
+              I founded and manage
+              <strong
+                ><a href="https://www.linkedin.com/company/addis-tech-jobs/"
+                  >Addis Tech Job</a
+                >s</strong
+              >, a community initiative that aggregates IT opportunities from
+              LinkedIn, Telegram, and other platforms. To date, The page
+              attracted
+              <strong>2,500+ developers and followers</strong>
+              reach a central channel for tech jobs by curating and sharing
+              verified job openings—completely free of charge.
             </p>
+
             <p>
-              As a mentor and educator, Samson shares his wealth of knowledge
-              with aspiring developers, delivering impactful workshops, speaking
-              engagements, and authoring insightful articles. His ability to
-              inspire others and provide guidance in their coding journeys has
-              made him a sought-after resource within the industry.
+              As a technical writer, I publish
+              <strong
+                ><a href="https://medium.com/@samsonkebede4"
+                  >tutorials and articles</a
+                ></strong
+              >
+              on Medium covering Python, Django, and AWS. My content focuses on
+              practical solutions, helping developers overcome challenges in
+              backend development and cloud architecture.
+            </p>
+
+            <p>
+              Beyond code, I mentor aspiring developers through workshops and
+              speaking engagements, advocating for equal opportunities in
+              Ethiopia's growing tech ecosystem.
             </p>
           </motion.div>
         </motion.div>

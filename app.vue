@@ -40,9 +40,10 @@
   <!-- <div class="my-12">
     <PortfolioFilter />
   </div> -->
-
+  <WorkExperienceTimeline />
   <Skills />
   <Services />
+
   <Contact />
   <Footer />
 </template>
