@@ -115,7 +115,7 @@ const experiences = [
   {
     company: "Paramount Students",
     position: "Vue.js Developer",
-    duration: "04/2025- Present",
+    duration: "04/2025- 09/2025",
     location: "Remote",
     responsibilities: [
       "Developed and maintained the Paramount Students university portal that offers students the opportunity to apply to universities at destinations around the world, through a simple process application using Vue.js and Pinia.",
