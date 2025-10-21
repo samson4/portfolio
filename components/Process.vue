@@ -327,9 +327,6 @@ import { defineComponent, h } from "vue";
           v-for="(category, categoryIndex) in skillCategories"
           :key="category.id"
           :variants="cardVariants"
-          while-hover="{ y: -8, scale: 1.02, transition: { duration: 0.3 } }"
-          @mouseenter="hoveredCard = category.id"
-          @mouseleave="hoveredCard = null"
           class="group"
         >
           <Card
@@ -426,7 +423,6 @@ import { defineComponent, h } from "vue";
           v-for="(tool, index) in devOpsTools"
           :key="tool.name"
           :variants="cardVariants"
-          while-hover="{ y: -10, scale: 1.05, rotateY: 10, transition: { duration: 0.3 } }"
           class="group perspective-1000"
         >
           <Card
@@ -459,23 +455,6 @@ import { defineComponent, h } from "vue";
         </motion.div>
       </motion.div>
 
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate="{ x: [0, 100, 0], y: [0, -50, 0], rotate: [0, 180, 360] }"
-          transition="{ duration: 20, repeat: Infinity, ease: 'linear' }"
-          class="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-orange-400 to-purple-500 rounded-full shadow-lg"
-        >
-          <Code class="w-16 h-16 text-white mx-auto mt-8" />
-        </motion.div>
-
-        <motion.div
-          animate="{ x: [50, 0], y: [-50, 0], rotate: [180, 0] }"
-          transition="{ duration: 30, repeat: Infinity, ease: 'linear' }"
-          class="absolute top-10 right-20 w-32 h-32 bg-gradient-to-r from-blue-400 to-green-500 rounded-full shadow-lg"
-        >
-          <Users class="w-16 h-16 text-white mx-auto mt-8" />
-        </motion.div>
-      </div>
     </div>
   </section>
 </template>

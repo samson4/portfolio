@@ -2,10 +2,10 @@
   <!--with download icon-->
 
   <a
-    href="/Samson-kebede-Resume-2025.pdf"
+    href="/SamsonKebedeResume.pdf"
     target="_blank"
     class="fixed bottom-12 right-12 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-colors duration-300 z-50 flex items-center"
-    download="Samson-kebede-Resume-2025.pdf"
+    download="SamsonkebedeResume.pdf"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

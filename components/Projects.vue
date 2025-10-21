@@ -68,7 +68,7 @@
             <p>
               With 3+ years of hands-on experience in software development , I
               specialize in crafting robust web applications and cloud
-              infrastructure using Python, Django, and AWS. My journey began as
+              infrastructure using Python, JavaScript, and Go. My journey began as
               a teenage coder and evolved into a passion for solving real-world
               problems through technology.
             </p>
@@ -82,7 +82,7 @@
               >, a community initiative that aggregates IT opportunities from
               LinkedIn, Telegram, and other platforms. To date, The page
               attracted
-              <strong>2,500+ developers and followers</strong>
+              <strong>3,500+ developers and followers</strong>
               reach a central channel for tech jobs by curating and sharing
               verified job openings—completely free of charge.
             </p>

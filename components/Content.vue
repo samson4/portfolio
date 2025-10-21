@@ -101,7 +101,7 @@ const rotatingGradientStyle = ref({
             :variants="itemVariants"
             class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl"
           >
-            As a seasoned web developer and system administrator, I have
+            As a seasoned Software developer a, I have
             dedicated years mastering my craft in software development and IT
             operations. With a particular passion for building scalable and
             reliable web applications.
@@ -120,14 +120,6 @@ const rotatingGradientStyle = ref({
             </Button>
 
             <div class="flex items-center gap-4">
-              <motion.a
-                href="#"
-                while-hover="{ scale: 1.1 }"
-                while-tap="{ scale: 0.95 }"
-                class="p-3 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full transition-colors duration-200"
-              >
-                <Facebook size="20" />
-              </motion.a>
               <motion.a
                 href="https://twitter.com/KebedeSamson"
                 target="_blank"

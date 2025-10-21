@@ -156,7 +156,7 @@ const pulsingIconStyle = ref({
                     repeat: Infinity,
                     ease: 'easeInOut',
                   }"
-                  class="w-32 h-32 bg-gradient-to-r from-orange-400 to-purple-500 rounded-full flex items-center justify-center mb-4"
+                  class="w-32 h-32 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full flex items-center justify-center mb-4"
                 >
                   <Code class="w-16 h-16 text-white" />
                 </motion.div>

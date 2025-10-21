@@ -187,7 +187,7 @@ import { defineComponent, h } from "vue";
           v-for="project in projects"
           :key="project.id"
           :variants="itemVariants"
-          while-hover="{ y: -10, rotateY: 5 }"
+       
           class="group"
         >
           <Card class="h-full">

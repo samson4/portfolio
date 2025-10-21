@@ -90,7 +90,7 @@
           >
             <Heart :size="16" class="text-red-500 fill-current" />
           </motion.div>
-          <span>and lots of coffee</span>
+          
         </div>
       </div>
     </div>
@@ -102,7 +102,6 @@ import { motion } from "motion-v";
 import { Facebook, Twitter, Linkedin, Github, Heart } from "lucide-vue-next";
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Twitter, href: "https://twitter.com/KebedeSamson", label: "Twitter" },
   {
     icon: Linkedin,
