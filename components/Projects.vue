@@ -84,7 +84,7 @@
               attracted
               <strong>3,500+ developers and followers</strong>
               reach a central channel for tech jobs by curating and sharing
-              verified job openings—completely free of charge.
+              verified job openings,completely free of charge.
             </p>
 
             <p>
