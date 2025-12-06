@@ -19,6 +19,7 @@ const projects = [
       { icon: "devicon:sqlite", name: "SQLite" },
     ],
     githubUrl: "https://github.com/samson4/bus-backend",
+    liveUrl: "https://bus-frontend-liard.vercel.app/",
     icon: "🌐",
   },
   {
@@ -225,7 +226,7 @@ import { defineComponent, h } from "vue";
                     </span>
                   </div>
 
-                  <div class="flex gap-4">
+                  <div class="flex gap-8">
                     <Button
                       asChild
                       variant="outline"
@@ -235,10 +236,26 @@ import { defineComponent, h } from "vue";
                         :href="project.githubUrl"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="flex items-center gap-2"
+                        class="flex items-center gap-2 mt-2"
                       >
                         <Github size="16" />
                         Source Code
+                      </a>
+                    </Button>
+                    <Button
+                      v-if="project.liveUrl"
+                      asChild
+                      variant="outline"
+                      class="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                    >
+                      <a
+                        :href="project.liveUrl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2 mt-1"
+                      >
+                        <span class="text-lg">🌐</span>
+                        Live Demo
                       </a>
                     </Button>
                   </div>
