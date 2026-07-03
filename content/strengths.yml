@@ -1,0 +1,18 @@
+kicker: Building and Transforming
+title: I Continually Enhance My Knowledge to Stay at the Forefront of Innovation
+description: Embracing an ever-evolving landscape, I consistently refine my skills to stay abreast of the latest advancements in software development, networking, and cloud solutions.
+experienceLabel: Experience
+experienceValue: 3+ Years
+items:
+  - name: Web Development
+    percentage: 95
+    color: bg-orange-500
+    icon: lucide:code
+  - name: Networking and Security
+    percentage: 80
+    color: bg-green-500
+    icon: lucide:server
+  - name: Mentorship & Education
+    percentage: 75
+    color: bg-purple-500
+    icon: lucide:users

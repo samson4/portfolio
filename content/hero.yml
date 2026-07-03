@@ -1,0 +1,21 @@
+greeting: Hello, I'm
+name: Samson Kebede
+rolePrefix: Experienced
+roleHighlight: Software Developer
+summary: As a seasoned Software developer, I have dedicated years to mastering software development and IT operations, with a particular passion for building scalable and reliable web applications.
+primaryCta:
+  label: About Me
+  href: "#about"
+image:
+  src: https://res.cloudinary.com/dpj8cuqfq/image/upload/v1689081074/mhzcubtmxkq3cjingnpu.jpg
+  alt: Samson Kebede
+socials:
+  - label: Twitter
+    href: https://twitter.com/KebedeSamson
+    icon: lucide:twitter
+  - label: LinkedIn
+    href: https://www.linkedin.com/in/samson-kebede-123270206/
+    icon: lucide:linkedin
+  - label: GitHub
+    href: https://github.com/samson4
+    icon: lucide:github

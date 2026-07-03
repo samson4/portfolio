@@ -15,7 +15,8 @@
     "nuxt": "^3.19.0",
     "nuxt-icon": "^0.4.1",
     "nuxt-studio": "1.7.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "zod": "^4.3.6"
   },
   "dependencies": {
     "@nuxt/content": "^3.15.0",

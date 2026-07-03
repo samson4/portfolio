@@ -1,7 +1,13 @@
 <script setup>
 import { motion } from "motion-v";
-import { Facebook, Twitter, Linkedin, Github } from "lucide-vue-next";
-import { ref } from "vue";
+import { defineComponent, h, ref } from "vue";
+
+defineProps({
+  hero: {
+    type: Object,
+    required: true,
+  },
+});
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -32,7 +38,6 @@ const imageVariants = {
   },
 };
 
-// Assuming you have a local Button component or will use a basic <button> element
 const Button = defineComponent({
   props: {
     asChild: {
@@ -56,7 +61,6 @@ const Button = defineComponent({
     };
   },
 });
-import { defineComponent, h } from "vue";
 
 const rotatingGradientStyle = ref({
   animation: "rotateGradient 20s linear infinite",
@@ -74,37 +78,31 @@ const rotatingGradientStyle = ref({
           class="order-2 lg:order-1"
         >
           <motion.div :variants="itemVariants" class="mb-4">
-            <span
-              class="text-orange-500 text-xl sm:text-2xl lg:text-3xl font-medium"
-              >Hello, I'm</span
-            >
+            <span class="text-orange-500 text-xl sm:text-2xl lg:text-3xl font-medium">
+              {{ hero.greeting }}
+            </span>
           </motion.div>
 
           <motion.h1
             :variants="itemVariants"
             class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6"
           >
-            Samson Kebede
+            {{ hero.name }}
           </motion.h1>
 
           <motion.p
             :variants="itemVariants"
             class="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6"
           >
-            Experienced
-            <span class="text-orange-500 font-semibold"
-              >Software Developer</span
-            >
+            {{ hero.rolePrefix }}
+            <span class="text-orange-500 font-semibold">{{ hero.roleHighlight }}</span>
           </motion.p>
 
           <motion.p
             :variants="itemVariants"
             class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl"
           >
-            As a seasoned Software developer a, I have
-            dedicated years mastering my craft in software development and IT
-            operations. With a particular passion for building scalable and
-            reliable web applications.
+            {{ hero.summary }}
           </motion.p>
 
           <motion.div
@@ -116,39 +114,22 @@ const rotatingGradientStyle = ref({
               size="lg"
               class="bg-orange-500 hover:bg-orange-600 text-white"
             >
-              <a href="#about">About Me</a>
+              <a :href="hero.primaryCta.href">{{ hero.primaryCta.label }}</a>
             </Button>
 
             <div class="flex items-center gap-4">
               <motion.a
-                href="https://twitter.com/KebedeSamson"
+                v-for="social in hero.socials"
+                :key="social.label"
+                :href="social.href"
                 target="_blank"
                 rel="noopener noreferrer"
                 while-hover="{ scale: 1.1 }"
                 while-tap="{ scale: 0.95 }"
                 class="p-3 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full transition-colors duration-200"
+                :aria-label="social.label"
               >
-                <Twitter size="20" />
-              </motion.a>
-              <motion.a
-                href="https://www.linkedin.com/in/samson-kebede-123270206/"
-                target="_blank"
-                rel="noopener noreferrer"
-                while-hover="{ scale: 1.1 }"
-                while-tap="{ scale: 0.95 }"
-                class="p-3 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full transition-colors duration-200"
-              >
-                <Linkedin size="20" />
-              </motion.a>
-              <motion.a
-                href="https://github.com/samson4"
-                target="_blank"
-                rel="noopener noreferrer"
-                while-hover="{ scale: 1.1 }"
-                while-tap="{ scale: 0.95 }"
-                class="p-3 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full transition-colors duration-200"
-              >
-                <Github size="20" />
+                <Icon :name="social.icon" size="20" />
               </motion.a>
             </div>
           </motion.div>
@@ -166,8 +147,8 @@ const rotatingGradientStyle = ref({
               class="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 opacity-20 blur-xl"
             />
             <img
-              src="https://res.cloudinary.com/dpj8cuqfq/image/upload/v1689081074/mhzcubtmxkq3cjingnpu.jpg"
-              alt="Samson Kebede"
+              :src="hero.image.src"
+              :alt="hero.image.alt"
               width="500"
               height="500"
               class="relative rounded-2xl object-cover w-80 h-80 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px]"
@@ -180,7 +161,6 @@ const rotatingGradientStyle = ref({
 </template>
 
 <style scoped>
-/* Define the rotation animation */
 @keyframes rotateGradient {
   0% {
     transform: rotate(0deg);

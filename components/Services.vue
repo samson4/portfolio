@@ -2,68 +2,17 @@
 import { motion, useInView } from "motion-v";
 import { ref } from "vue";
 import { Github } from "lucide-vue-next";
+import { defineComponent, h } from "vue";
+
+defineProps({
+  section: {
+    type: Object,
+    required: true,
+  },
+});
 
 const servicesSection = ref(null);
 const isInView = useInView(servicesSection, { once: true, margin: "-100px" });
-
-const projects = [
-  {
-    id: 0,
-    title: "Data Platform",
-    description: `I built a database explorer platform using FastAPI, SQLAlchemy,SQLite and Nuxt(vue).It simplifies SQL and PostgreSQL database management by providing a unified interface for tasks that were previously fragmented. The platform provided introspection, visualization, and schema/data alteration tools, which improves developer productivity.
-`,
-    technologies: [
-      { icon: "devicon:nuxtjs", name: "Nuxt.js" },
-      { icon: "devicon:vuejs", name: "Vue.js" },
-      { icon: "devicon:fastapi", name: "FastAPI" },
-      { icon: "devicon:sqlite", name: "SQLite" },
-    ],
-    githubUrl: "https://github.com/samson4/bus-backend",
-    liveUrl: "https://bus-frontend-liard.vercel.app/",
-    icon: "🌐",
-  },
-  {
-    id: 1,
-    title: "Online Food Ordering and Delivery",
-    description:
-      'A web app that automates the traditional ordering and delivery of food for restaurant customers. The system incorporates third party APIs like "mapbox" for restaurant locations and "Yenepay" for easy payment system.',
-    technologies: [
-      { icon: "logos:django-icon", name: "Django" },
-      { icon: "devicon:html5", name: "HTML5" },
-      { icon: "devicon:javascript", name: "JavaScript" },
-      { icon: "devicon:bootstrap", name: "Bootstrap" },
-    ],
-    githubUrl: "https://github.com/samson4/foodapp",
-    icon: "🍕",
-  },
-  {
-    id: 2,
-    title: "HDToday Clone",
-    description:
-      "A side project that mimics a movie streaming website called HDToday built with MEVN stack and Vuetify as a UI library. An admin uploads a movie and is displayed for users.",
-    technologies: [
-      { icon: "devicon:vuejs", name: "Vue.js" },
-      { icon: "devicon:express", name: "Express.js" },
-      { icon: "devicon:nodejs", name: "Node.js" },
-      { icon: "devicon:mongodb", name: "MongoDB" },
-    ],
-    githubUrl: "https://github.com/samson4/hdtoday",
-    icon: "🎬",
-  },
-  {
-    id: 3,
-    title: "Django Blog",
-    description:
-      "A re-implementation for a Django Blog tutorial series by Corey M Schafer. I remade the app with Django Rest framework and Vue.js. Also added more functionalities like search support.",
-    technologies: [
-      { icon: "logos:django-icon", name: "Django" },
-      { icon: "devicon:vuejs", name: "Vue.js" },
-      { icon: "devicon:bootstrap", name: "Bootstrap" },
-    ],
-    githubUrl: "https://github.com/samson4/Blog-backend",
-    icon: "📝",
-  },
-];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -84,7 +33,6 @@ const itemVariants = {
   },
 };
 
-// Basic Card component (replace with your actual Card component)
 const Card = defineComponent({
   props: {
     className: {
@@ -104,7 +52,6 @@ const Card = defineComponent({
   },
 });
 
-// Basic CardContent component (replace with your actual CardContent component)
 const CardContent = defineComponent({
   props: {
     className: {
@@ -117,7 +64,6 @@ const CardContent = defineComponent({
   },
 });
 
-// Basic Button component (replace with your actual Button component)
 const Button = defineComponent({
   props: {
     asChild: {
@@ -149,7 +95,6 @@ const Button = defineComponent({
     };
   },
 });
-import { defineComponent, h } from "vue";
 </script>
 
 <template>
@@ -161,20 +106,14 @@ import { defineComponent, h } from "vue";
         transition="{ duration: 0.6 }"
         class="text-center mb-16"
       >
-        <span class="text-orange-500 text-lg sm:text-xl font-medium"
-          >Projects</span
-        >
-        <h2
-          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6"
-        >
-          What I Offer to Clients
+        <span class="text-orange-500 text-lg sm:text-xl font-medium">
+          {{ section.kicker }}
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
+          {{ section.title }}
         </h2>
         <p class="text-gray-600 text-lg max-w-4xl mx-auto">
-          With a focus on software development, AWS solutions, Networking and
-          System Administration, I provide a range of services that bring value
-          to your organization and foster an innovative culture. Explore my full
-          time and various side projects that can provide a general view of what
-          I can provide for your company.
+          {{ section.description }}
         </p>
       </motion.div>
 
@@ -185,19 +124,15 @@ import { defineComponent, h } from "vue";
         class="grid grid-cols-1 lg:grid-cols-2 gap-8"
       >
         <motion.div
-          v-for="project in projects"
+          v-for="project in section.items"
           :key="project.id"
           :variants="itemVariants"
-       
           class="group"
         >
           <Card class="h-full">
             <CardContent class="p-8">
               <div class="flex items-start gap-6">
-                <motion.div
-                  while-hover="{ scale: 1.1, rotate: 10 }"
-                  class="text-6xl flex-shrink-0"
-                >
+                <motion.div while-hover="{ scale: 1.1, rotate: 10 }" class="text-6xl flex-shrink-0">
                   {{ project.icon }}
                 </motion.div>
                 <div class="flex-1">
@@ -210,18 +145,13 @@ import { defineComponent, h } from "vue";
                     {{ project.description }}
                   </p>
 
-                  <div
-                    v-for="tech in project.technologies"
-                    :key="tech"
-                    class="inline-flex flex-wrap gap-3 mb-6"
-                  >
+                  <div class="inline-flex flex-wrap gap-3 mb-6">
                     <span
-                      class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                      v-for="tech in project.technologies"
+                      :key="`${project.id}-${tech.name}`"
+                      class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium inline-flex items-center gap-2"
                     >
-                      <Icon
-                        class="w-[30px] h-[30px]"
-                        :name="`${tech.icon}`"
-                      ></Icon>
+                      <Icon class="w-[30px] h-[30px]" :name="tech.icon" />
                       {{ tech.name }}
                     </span>
                   </div>

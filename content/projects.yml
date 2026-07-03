@@ -1,0 +1,59 @@
+kicker: Projects
+title: What I Offer to Clients
+description: With a focus on software development, AWS solutions, networking, and system administration, I provide a range of services that bring value to your organization and foster an innovative culture. Explore my full-time and side projects for a practical view of what I can provide.
+items:
+  - id: 0
+    title: Data Platform
+    icon: 🌐
+    description: I built a database explorer platform using FastAPI, SQLAlchemy, SQLite, and Nuxt. It simplifies SQL and PostgreSQL database management by providing a unified interface for tasks that were previously fragmented. The platform provided introspection, visualization, and schema/data alteration tools, improving developer productivity.
+    githubUrl: https://github.com/samson4/bus-backend
+    liveUrl: https://bus-frontend-liard.vercel.app/
+    technologies:
+      - icon: devicon:nuxtjs
+        name: Nuxt.js
+      - icon: devicon:vuejs
+        name: Vue.js
+      - icon: devicon:fastapi
+        name: FastAPI
+      - icon: devicon:sqlite
+        name: SQLite
+  - id: 1
+    title: Online Food Ordering and Delivery
+    icon: 🍕
+    description: A web app that automates the traditional ordering and delivery of food for restaurant customers. The system incorporates third-party APIs like Mapbox for restaurant locations and Yenepay for payments.
+    githubUrl: https://github.com/samson4/foodapp
+    technologies:
+      - icon: logos:django-icon
+        name: Django
+      - icon: devicon:html5
+        name: HTML5
+      - icon: devicon:javascript
+        name: JavaScript
+      - icon: devicon:bootstrap
+        name: Bootstrap
+  - id: 2
+    title: HDToday Clone
+    icon: 🎬
+    description: A side project that mimics a movie streaming website built with the MEVN stack and Vuetify. An admin can upload movies that are then displayed for users.
+    githubUrl: https://github.com/samson4/hdtoday
+    technologies:
+      - icon: devicon:vuejs
+        name: Vue.js
+      - icon: devicon:express
+        name: Express.js
+      - icon: devicon:nodejs
+        name: Node.js
+      - icon: devicon:mongodb
+        name: MongoDB
+  - id: 3
+    title: Django Blog
+    icon: 📝
+    description: A reimplementation of a Django Blog tutorial series by Corey M Schafer. I rebuilt the app with Django REST Framework and Vue.js, and added functionality such as search support.
+    githubUrl: https://github.com/samson4/Blog-backend
+    technologies:
+      - icon: logos:django-icon
+        name: Django
+      - icon: devicon:vuejs
+        name: Vue.js
+      - icon: devicon:bootstrap
+        name: Bootstrap

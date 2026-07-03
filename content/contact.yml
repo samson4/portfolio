@@ -1,0 +1,31 @@
+kicker: Get In Touch
+title: Let's Work Together
+description: Ready to start your next project? I'd love to hear from you. Send me a message and I'll respond as soon as possible.
+infoTitle: Contact Information
+availabilityTitle: Available for Projects
+availabilityDescription: Let's create something amazing together!
+info:
+  - icon: lucide:mail
+    title: Email
+    value: samsonkebede4@gmail.com
+    href: mailto:samsonkebede4@gmail.com
+  - icon: lucide:phone
+    title: Phone
+    value: "+251 924844227"
+    href: tel:+251924844227
+  - icon: lucide:map-pin
+    title: Location
+    value: Addis Ababa, Ethiopia
+    href: https://maps.google.com/?q=Addis%20Ababa%2C%20Ethiopia
+form:
+  firstNameLabel: First Name
+  firstNamePlaceholder: John
+  lastNameLabel: Last Name
+  lastNamePlaceholder: Doe
+  emailLabel: Email
+  emailPlaceholder: john@example.com
+  subjectLabel: Subject
+  subjectPlaceholder: Project Discussion
+  messageLabel: Message
+  messagePlaceholder: Tell me about your project...
+  submitLabel: Send Message

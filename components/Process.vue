@@ -1,7 +1,13 @@
 <script setup>
 import { ref } from "vue";
 import { motion, useInView } from "motion-v";
-import { Code, Server, Users } from "lucide-vue-next";
+
+defineProps({
+  section: {
+    type: Object,
+    required: true,
+  },
+});
 
 const technicalSkillsSection = ref(null);
 const isInView = useInView(technicalSkillsSection, {
@@ -9,166 +15,6 @@ const isInView = useInView(technicalSkillsSection, {
   margin: "-100px",
 });
 const hoveredCard = ref(null);
-
-const skillCategories = ref([
-  {
-    id: 1,
-    title: "Python",
-    icon: "devicon:python",
-    description: "Backend development with modern Python frameworks",
-    color: "from-blue-500 to-blue-700",
-    bgGradient: "from-blue-50 to-blue-100",
-    technologies: [
-      {
-        name: "Django",
-        icon: "devicon:djangorest-wordmark",
-        level: 95,
-        color: "bg-green-500",
-      },
-      {
-        name: "Django REST Framework",
-        icon: "devicon:djangorest-wordmark",
-        level: 95,
-        color: "bg-green-600",
-      },
-      {
-        name: "FastAPI",
-        level: 90,
-        icon: "devicon:fastapi-wordmark",
-        color: "bg-teal-500",
-      },
-      {
-        name: "Flask",
-        level: 80,
-        icon: "devicon:flask-wordmark",
-        color: "bg-blue-500",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "JavaScript/TypeScript",
-    icon: "devicon:javascript",
-    description: "Full-stack JavaScript development",
-    color: "from-yellow-500 to-orange-600",
-    bgGradient: "from-yellow-50 to-orange-100",
-    technologies: [
-      {
-        name: "Node.js",
-        icon: "devicon:nodejs-wordmark",
-        level: 85,
-        color: "bg-green-500",
-      },
-      {
-        name: "Express",
-        icon: "devicon:express",
-        level: 80,
-        color: "bg-gray-700",
-      },
-      {
-        name: "Vue.js",
-        level: 90,
-        icon: "devicon:vuejs-wordmark",
-        color: "bg-green-400",
-      },
-      {
-        name: "Nuxt.js",
-        level: 85,
-        icon: "devicon:nuxtjs",
-        color: "bg-green-500",
-      },
-      {
-        name: "React",
-        level: 70,
-        icon: "devicon:react-wordmark",
-        color: "bg-blue-500",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Go",
-    icon: "devicon:go-wordmark",
-    description: "High-performance backend services",
-    color: "from-cyan-500 to-blue-600",
-    bgGradient: "from-cyan-50 to-blue-100",
-    technologies: [{ name: "Gin Framework", level: 70, color: "bg-cyan-500" }],
-  },
-  {
-    id: 4,
-    title: "Databases",
-    icon: "devicon:azuresqldatabase",
-    description: "Database design and management",
-    color: "from-purple-500 to-pink-600",
-    bgGradient: "from-purple-50 to-pink-100",
-    technologies: [
-      {
-        name: "PostgreSQL",
-        icon: "devicon:postgresql-wordmark",
-        level: 85,
-        color: "bg-blue-600",
-      },
-      {
-        name: "MySQL",
-        level: 80,
-        icon: "devicon:mysql-wordmark",
-        color: "bg-orange-500",
-      },
-
-      {
-        name: "SQLite",
-        level: 85,
-        icon: "devicon:sqlite-wordmark",
-        color: "bg-gray-600",
-      },
-      {
-        name: "MongoDB",
-        level: 75,
-        icon: "devicon:mongodb-wordmark",
-        color: "bg-green-500",
-      },
-      {
-        name: "MariaDB",
-        level: 75,
-        icon: "devicon:mariadb-wordmark",
-        color: "bg-blue-500",
-      },
-    ],
-  },
-]);
-
-const devOpsTools = ref([
-  {
-    name: "AWS",
-    icon: "devicon:amazonwebservices-wordmark",
-    color: "from-orange-400 to-orange-600",
-    description: "Cloud Infrastructure",
-  },
-  {
-    name: "Docker",
-    icon: "devicon:docker-wordmark",
-    color: "from-blue-400 to-blue-600",
-    description: "Containerization",
-  },
-  {
-    name: "Nginx",
-    icon: "devicon:nginx",
-    color: "from-green-400 to-green-600",
-    description: "Web Server",
-  },
-  {
-    name: "Github Actions",
-    icon: "devicon:githubactions",
-    color: "from-green-400 to-green-600",
-    description: "CI/CD",
-  },
-  {
-    name: "Git",
-    icon: "devicon:git",
-    color: "from-red-400 to-red-600",
-    description: "Version Control",
-  },
-]);
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -220,7 +66,6 @@ const progressVariants = {
   }),
 };
 
-// Basic Card component (replace with your actual Card component)
 const Card = defineComponent({
   props: {
     className: {
@@ -233,7 +78,6 @@ const Card = defineComponent({
   },
 });
 
-// Basic CardContent component (replace with your actual CardContent component)
 const CardContent = defineComponent({
   props: {
     className: {
@@ -246,7 +90,6 @@ const CardContent = defineComponent({
   },
 });
 
-// Basic Badge component (replace with your actual Badge component)
 const Badge = defineComponent({
   props: {
     variant: {
@@ -259,18 +102,17 @@ const Badge = defineComponent({
     },
   },
   setup(props, { slots }) {
-    let classes = `inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus-visible:ring-ring`;
+    let classes = `inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors`;
     if (props.variant === "secondary") {
-      classes +=
-        " border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80";
+      classes += " border-transparent bg-secondary text-secondary-foreground";
     } else {
-      classes +=
-        " border-input bg-background text-foreground ring-offset-background focus-visible:ring-ring";
+      classes += " border-input bg-background text-foreground";
     }
     return () =>
       h("div", { class: classes + " " + props.className }, slots.default());
   },
 });
+
 import { defineComponent, h } from "vue";
 </script>
 
@@ -289,13 +131,11 @@ import { defineComponent, h } from "vue";
       >
         <motion.span
           initial="{ opacity: 0, scale: 0.8 }"
-          :animate="
-            isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
-          "
+          :animate="isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }"
           transition="{ duration: 0.5, delay: 0.2 }"
           class="inline-block text-orange-500 text-lg sm:text-xl font-medium bg-orange-100 px-4 py-2 rounded-full"
         >
-          Technical Expertise
+          {{ section.kicker }}
         </motion.span>
         <motion.h2
           initial="{ opacity: 0, y: 20 }"
@@ -303,7 +143,7 @@ import { defineComponent, h } from "vue";
           transition="{ duration: 0.6, delay: 0.3 }"
           class="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mt-6 mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent"
         >
-          Skills & Technologies
+          {{ section.title }}
         </motion.h2>
         <motion.p
           initial="{ opacity: 0, y: 20 }"
@@ -311,9 +151,7 @@ import { defineComponent, h } from "vue";
           transition="{ duration: 0.6, delay: 0.4 }"
           class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed"
         >
-          A comprehensive overview of my technical skills and the modern
-          technologies I use to build scalable, efficient, and robust
-          applications.
+          {{ section.description }}
         </motion.p>
       </motion.div>
 
@@ -324,7 +162,7 @@ import { defineComponent, h } from "vue";
         class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
       >
         <motion.div
-          v-for="(category, categoryIndex) in skillCategories"
+          v-for="(category, categoryIndex) in section.categories"
           :key="category.id"
           :variants="cardVariants"
           class="group"
@@ -351,9 +189,7 @@ import { defineComponent, h } from "vue";
                   >
                     {{ category.title }}
                   </h3>
-                  <p class="text-gray-600 text-sm">
-                    {{ category.description }}
-                  </p>
+                  <p class="text-gray-600 text-sm">{{ category.description }}</p>
                 </div>
               </div>
 
@@ -376,16 +212,12 @@ import { defineComponent, h } from "vue";
                 >
                   <div class="flex justify-center items-center">
                     <Icon :name="tech.icon" class="w-8 h-8 text-gray-700" />
-                    <span class="font-medium text-gray-800">{{
-                      tech.name
-                    }}</span>
+                    <span class="font-medium text-gray-800">{{ tech.name }}</span>
                     <Badge variant="secondary" class="text-xs">
                       {{ tech.level }}%
                     </Badge>
                   </div>
-                  <div
-                    class="w-full h-2 bg-gray-200 rounded-full overflow-hidden"
-                  >
+                  <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
                     <motion.div
                       :variants="progressVariants"
                       :custom="tech.level"
@@ -407,10 +239,8 @@ import { defineComponent, h } from "vue";
         transition="{ duration: 0.6, delay: 0.8 }"
         class="text-center mb-12"
       >
-        <h3 class="text-3xl font-bold text-gray-900 mb-4">DevOps & Tools</h3>
-        <p class="text-gray-600 text-lg">
-          Essential tools for deployment, scaling, and maintaining applications
-        </p>
+        <h3 class="text-3xl font-bold text-gray-900 mb-4">{{ section.toolsHeading }}</h3>
+        <p class="text-gray-600 text-lg">{{ section.toolsDescription }}</p>
       </motion.div>
 
       <motion.div
@@ -420,14 +250,12 @@ import { defineComponent, h } from "vue";
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
       >
         <motion.div
-          v-for="(tool, index) in devOpsTools"
+          v-for="(tool, index) in section.tools"
           :key="tool.name"
           :variants="cardVariants"
           class="group perspective-1000"
         >
-          <Card
-            class="h-full bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden"
-          >
+          <Card class="h-full bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-2xl overflow-hidden">
             <CardContent class="p-6 text-center">
               <motion.div
                 animate="{ y: [0, -5, 0] }"
@@ -454,10 +282,10 @@ import { defineComponent, h } from "vue";
           </Card>
         </motion.div>
       </motion.div>
-
     </div>
   </section>
 </template>
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 body {
