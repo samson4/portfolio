@@ -7,7 +7,7 @@ items:
     status: In production
     year: 2023 — now
     icon: 🏥
-    description: A hospital management platform running across multiple clinic sites with no shared network. I designed the schema-driven Python ETL pipeline that keeps seven database pairs in sync — FK-aware topological ordering, staging-table bridges, and SSH tunneling — after leading remediation of a serious server security breach.
+    description: A hospital management platform running across multiple clinic sites with no shared network. I designed the schema-driven Python ETL pipeline that keeps seven database pairs in sync — FK-aware topological ordering, staging-table bridges, and SSH tunneling.
     technologies:
       - icon: devicon:postgresql
         name: PostgreSQL
