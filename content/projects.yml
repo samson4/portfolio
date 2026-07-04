@@ -2,7 +2,7 @@ title: What I've been building
 description: A mix of full-time infrastructure work and independent products across healthcare, the creator economy, and AI media — plus a handful of earlier builds that shaped how I work today.
 items:
   - id: 0
-    title: Orbit
+    title: Orbit Health EMR
     tagline: Multi-site hospital management system
     status: In production
     year: 2023 — now
