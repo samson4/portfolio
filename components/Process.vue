@@ -1,4 +1,6 @@
 <script setup>
+const { targetRef, revealStyle } = useScrollReveal();
+
 defineProps({
   section: {
     type: Object,
@@ -9,7 +11,7 @@ defineProps({
 
 <template>
   <section id="technical-skills" class="border-t border-ink-900/10 py-20 lg:py-32">
-    <div class="mx-auto max-w-6xl px-6">
+    <div ref="targetRef" class="mx-auto max-w-6xl px-6" :style="revealStyle">
       <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p class="idx text-copper-600">03 — {{ section.kicker }}</p>

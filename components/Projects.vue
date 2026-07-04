@@ -1,4 +1,6 @@
 <script setup>
+const { targetRef, revealStyle } = useScrollReveal();
+
 defineProps({
   section: {
     type: Object,
@@ -9,7 +11,7 @@ defineProps({
 
 <template>
   <section id="about" class="border-t border-ink-900/10 py-20 lg:py-32">
-    <div class="mx-auto max-w-6xl px-6">
+    <div ref="targetRef" class="mx-auto max-w-6xl px-6" :style="revealStyle">
       <div class="grid gap-14 lg:grid-cols-[0.6fr_1fr]">
         <!-- Sidebar: venture index, distinct from every other section's layout -->
         <div class="lg:sticky lg:top-32 lg:self-start">

@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref } from "vue";
 
+const { targetRef, revealStyle } = useScrollReveal();
+
 defineProps({
   section: {
     type: Object,
@@ -40,7 +42,7 @@ const handleSubmit = () => {
 
 <template>
   <section id="contact" class="border-t border-ink-900/10 bg-ink-900 py-20 text-paper-100 lg:py-32">
-    <div class="mx-auto max-w-6xl px-6">
+    <div ref="targetRef" class="mx-auto max-w-6xl px-6" :style="revealStyle">
       <div class="grid gap-16 lg:grid-cols-[0.8fr_1fr]">
         <div>
           <p class="idx text-copper-300">05 — {{ section.kicker }}</p>
