@@ -1,4 +1,3 @@
-kicker: Career Journey
 title: Professional Experience
 description: My career path through various roles and responsibilities in the tech industry.
 items:
@@ -13,6 +12,14 @@ items:
       - Optimized system performance by creating database indexes and partitioning, significantly reducing response times.
       - Wrote efficient scripts for generating mock data and performing bulk updates.
       - Integrated Orbit EMR with laboratory, billing, and pharmacy systems.
+  - company: braincode sp z o
+    position: Full Stack Developer
+    duration: 01/2026 - Present
+    location: Remote, Poland
+    responsibilities:
+      - Lead the end-to-end development of a specialized marketplace connecting brands with AI-generated influencers, leveraging FastAPI, SQLAlchemy, and Pydantic to build a highly scalable backend
+      - Implemented complex workflows for AI avatar, video, and image generation, streamlining the creation of synthetic media through structured Pydantic schemas and API orchestrations
+      - Designed robust backend schemas to handle multi-tenant relationships and diverse media assets, ensuring seamless integration between AI models and user-facing dashboards.
   - company: Paramount Students
     position: Vue.js Developer
     duration: 04/2025 - 09/2025
@@ -38,3 +45,4 @@ items:
       - Documented system configurations and procedures.
       - Configured and tested Linux and Windows Server OS features and roles.
     contact: "Contact: Info@waliatechnologies.net | +251118599705, +251583205223"
+kicker: Career Journey
