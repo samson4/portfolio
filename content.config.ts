@@ -1,4 +1,4 @@
-import { defineCollection, defineContentConfig } from "@nuxt/content";
+import { defineCollection, defineContentConfig, property } from "@nuxt/content";
 import { z } from "zod";
 
 const linkSchema = z.object({
@@ -32,7 +32,11 @@ export default defineContentConfig({
         primaryCta: linkSchema,
         resume: z.object({
           label: z.string(),
-          href: z.string(),
+          href: property(z.string()).editor({
+            input: "media",
+            label: "Resume file",
+            description: "Select the resume asset from the Studio media library.",
+          }),
           download: z.string().optional(),
         }),
         image: mediaSchema,
