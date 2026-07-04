@@ -66,14 +66,7 @@ const ventures = [
           <span aria-hidden="true">↓</span>
         </a>
 
-        <!-- Status line: what's actively being built, dev-log style -->
-        <div class="idx mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-ink-900/10 pt-6 text-ink-500">
-          <span class="text-ink-300">Currently building —</span>
-          <span v-for="v in ventures" :key="v.label" class="flex items-center gap-2">
-            <span class="h-1.5 w-1.5 rounded-full" :style="{ backgroundColor: v.color }" />
-            {{ v.label }}
-          </span>
-        </div>
+       
       </div>
     </div>
   </section>
