@@ -30,6 +30,11 @@ export default defineContentConfig({
         roleHighlight: z.string(),
         summary: z.string(),
         primaryCta: linkSchema,
+        resume: z.object({
+          label: z.string(),
+          href: z.string(),
+          download: z.string().optional(),
+        }),
         image: mediaSchema,
         socials: z.array(
           z.object({

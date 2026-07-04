@@ -6,6 +6,10 @@ summary: As a seasoned Software developer, I have dedicated years to mastering s
 primaryCta:
   label: About Me
   href: "#about"
+resume:
+  label: Resume
+  href: /SamsonKebedeResume.pdf
+  download: SamsonKebedeResume.pdf
 image:
   src: https://res.cloudinary.com/dpj8cuqfq/image/upload/v1689081074/mhzcubtmxkq3cjingnpu.jpg
   alt: Samson Kebede

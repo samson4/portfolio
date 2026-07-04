@@ -43,14 +43,17 @@ const { data: homepage } = await useAsyncData("homepage-content", async () => {
     contact,
   };
 });
+
+const resumeLink = computed(() => homepage.value?.hero.resume ?? null);
 </script>
 
 <template>
   <a
-    href="/SamsonKebedeResume.pdf"
+    v-if="resumeLink"
+    :href="resumeLink.href"
     target="_blank"
     class="fixed bottom-12 right-12 z-50 flex items-center rounded-full bg-orange-500 px-6 py-3 font-semibold text-white shadow-lg transition-colors duration-300 hover:bg-orange-600"
-    download="SamsonkebedeResume.pdf"
+    :download="resumeLink.download || true"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +69,7 @@ const { data: homepage } = await useAsyncData("homepage-content", async () => {
         d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M16 10l-4 4m0 0l-4-4m4 4V4"
       />
     </svg>
-    Resume
+    {{ resumeLink.label }}
   </a>
 
   <div class="content">
