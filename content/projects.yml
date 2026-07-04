@@ -1,3 +1,4 @@
+kicker: Case Files
 title: What I've been building
 description: A mix of full-time infrastructure work and independent products across healthcare, the creator economy, and AI media — plus a handful of earlier builds that shaped how I work today.
 items:
@@ -5,9 +6,9 @@ items:
     title: Orbit
     tagline: Multi-site hospital management system
     status: In production
-    year: 2023 — now
+    year: "2023 — now"
     icon: 🏥
-    description: A hospital management platform running across multiple clinic sites with no shared network. I designed the schema-driven Python ETL pipeline that keeps seven database pairs in sync.
+    description: A hospital management platform running across multiple clinic sites with no shared network. I designed the schema-driven Python ETL pipeline that keeps seven database pairs in sync — FK-aware topological ordering, staging-table bridges, and SSH tunneling — after leading remediation of a serious server security breach.
     technologies:
       - icon: devicon:postgresql
         name: PostgreSQL
@@ -23,7 +24,7 @@ items:
     status: In development
     year: "2026"
     icon: 🎭
-    description: "A two-sided marketplace connecting brands with AI-generated influencers. "
+    description: A two-sided marketplace connecting brands with AI-generated influencers. I built the creator-side listing wizard, a dataroom approval queue, TikTok and YouTube channel verification, and Trackdesk affiliate tracking on a FastAPI and Pydantic backend.
     technologies:
       - icon: devicon:fastapi
         name: FastAPI
@@ -39,7 +40,7 @@ items:
     status: MVP build
     year: "2026"
     icon: 🎬
-    description: An AI video and avatar generation platform built on Nuxt 3 and FastAPI. A credit ledger pattern with atomic operations and idempotency keys so generation jobs never double-charge or double-spend.
+    description: An AI video and avatar generation platform built on Nuxt 3 and FastAPI. The core engineering problem was billing — a credit ledger pattern with atomic operations and idempotency keys so generation jobs never double-charge or double-spend.
     technologies:
       - icon: devicon:nuxtjs
         name: Nuxt.js
@@ -49,6 +50,18 @@ items:
         name: Redis
       - icon: devicon:postgresql
         name: PostgreSQL
+  - id: 3
+    title: WorldCup1vs1
+    tagline: Sports documentary channel
+    status: Live
+    year: "2026"
+    icon: ⚽
+    description: A YouTube channel producing cinematic World Cup documentaries. I write the scripts and run a strict three-cue production system that separates archive footage, AI motion sequences, and AI static graphics for a clean handoff to editing.
+    technologies:
+      - icon: logos:youtube-icon
+        name: YouTube
+      - icon: lucide:film
+        name: ElevenLabs
   - id: 4
     title: Database Explorer
     tagline: Early side project
