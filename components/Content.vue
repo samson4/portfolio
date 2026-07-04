@@ -1,7 +1,4 @@
 <script setup>
-import { motion } from "motion-v";
-import { defineComponent, h, ref } from "vue";
-
 defineProps({
   hero: {
     type: Object,
@@ -9,164 +6,86 @@ defineProps({
   },
 });
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
-
-const Button = defineComponent({
-  props: {
-    asChild: {
-      type: Boolean,
-      default: false,
-    },
-    size: {
-      type: String,
-      default: "",
-    },
-    className: {
-      type: String,
-      default: "",
-    },
-  },
-  setup(props, { slots }) {
-    return () => {
-      const tag = props.asChild ? "a" : "button";
-      const classes = `rounded-full px-8 py-3 text-lg ${props.className}`;
-      return h(tag, { class: classes }, slots.default ? slots.default() : null);
-    };
-  },
-});
-
-const rotatingGradientStyle = ref({
-  animation: "rotateGradient 20s linear infinite",
-});
+const ventures = [
+  { label: "Orbit", color: "#B5622A" },
+  { label: "InfluencerMkt", color: "#1F6F63" },
+  { label: "LuminaAI", color: "#2B2D24" },
+  { label: "WorldCup1vs1", color: "#9C9E93" },
+];
 </script>
 
 <template>
-  <section id="home" class="min-h-screen flex items-center pt-16 lg:pt-20">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-        <motion.div
-          :variants="containerVariants"
-          initial="hidden"
-          animate="visible"
-          class="order-2 lg:order-1"
-        >
-          <motion.div :variants="itemVariants" class="mb-4">
-            <span class="text-orange-500 text-xl sm:text-2xl lg:text-3xl font-medium">
-              {{ hero.greeting }}
-            </span>
-          </motion.div>
+  <section id="home" class="relative overflow-hidden pt-32 pb-20 lg:pt-44 lg:pb-32">
+    <div class="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+      <div>
+        <p class="idx text-copper-600">00 — {{ hero.greeting }}</p>
 
-          <motion.h1
-            :variants="itemVariants"
-            class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6"
-          >
-            {{ hero.name }}
-          </motion.h1>
+        <h1 class="mt-6 font-display text-[2.6rem] font-medium leading-[1.05] text-ink-900 sm:text-6xl lg:text-7xl">
+          {{ hero.name }}
+        </h1>
 
-          <motion.p
-            :variants="itemVariants"
-            class="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6"
-          >
-            {{ hero.rolePrefix }}
-            <span class="text-orange-500 font-semibold">{{ hero.roleHighlight }}</span>
-          </motion.p>
+        <p class="mt-6 text-xl text-ink-700 sm:text-2xl">
+          {{ hero.rolePrefix }}
+          <span class="font-display italic text-copper-600">{{ hero.roleHighlight }}</span>
+        </p>
 
-          <motion.p
-            :variants="itemVariants"
-            class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl"
-          >
-            {{ hero.summary }}
-          </motion.p>
+        <p class="mt-6 max-w-xl text-base leading-relaxed text-ink-500 sm:text-lg">
+          {{ hero.summary }}
+        </p>
 
-          <motion.div
-            :variants="itemVariants"
-            class="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+        <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <a
+            :href="hero.primaryCta.href"
+            class="idx border-b-2 border-ink-900 pb-1 text-ink-900 transition-colors hover:border-copper-500 hover:text-copper-600"
           >
-            <Button
-              asChild
-              size="lg"
-              class="bg-orange-500 hover:bg-orange-600 text-white"
+            {{ hero.primaryCta.label }} →
+          </a>
+
+          <div class="flex items-center gap-3">
+            <a
+              v-for="social in hero.socials"
+              :key="social.label"
+              :href="social.href"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-ink-900/15 text-ink-700 transition-colors hover:border-copper-500 hover:text-copper-600"
+              :aria-label="social.label"
             >
-              <a :href="hero.primaryCta.href">{{ hero.primaryCta.label }}</a>
-            </Button>
-
-            <div class="flex items-center gap-4">
-              <motion.a
-                v-for="social in hero.socials"
-                :key="social.label"
-                :href="social.href"
-                target="_blank"
-                rel="noopener noreferrer"
-                while-hover="{ scale: 1.1 }"
-                while-tap="{ scale: 0.95 }"
-                class="p-3 bg-gray-100 hover:bg-orange-500 hover:text-white rounded-full transition-colors duration-200"
-                :aria-label="social.label"
-              >
-                <Icon :name="social.icon" size="20" />
-              </motion.a>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          :variants="imageVariants"
-          initial="hidden"
-          animate="visible"
-          class="order-1 lg:order-2 flex justify-center"
-        >
-          <div class="relative">
-            <motion.div
-              :style="rotatingGradientStyle"
-              class="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 opacity-20 blur-xl"
-            />
-            <img
-              :src="hero.image.src"
-              :alt="hero.image.alt"
-              width="500"
-              height="500"
-              class="relative rounded-2xl object-cover w-80 h-80 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px]"
-            />
+              <Icon :name="social.icon" size="18" />
+            </a>
           </div>
-        </motion.div>
+        </div>
+
+        <!-- Status line: what's actively being built, dev-log style -->
+        <div class="idx mt-14 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-ink-900/10 pt-6 text-ink-500">
+          <span class="text-ink-300">Currently building —</span>
+          <span v-for="v in ventures" :key="v.label" class="flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full" :style="{ backgroundColor: v.color }" />
+            {{ v.label }}
+          </span>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-sm lg:mx-0">
+        <div class="blueprint-corner">
+          <img
+            :src="hero.image.src"
+            :alt="hero.image.alt"
+            width="480"
+            height="560"
+            class="h-[420px] w-full object-cover grayscale-[15%] sm:h-[520px]"
+          />
+        </div>
+        <a
+          :href="hero.resume.href"
+          target="_blank"
+          :download="hero.resume.download || true"
+          class="idx mt-6 flex items-center justify-between border border-ink-900/15 px-5 py-3 text-ink-900 transition-colors hover:border-copper-500 hover:text-copper-600"
+        >
+          {{ hero.resume.label }}
+          <span aria-hidden="true">↓</span>
+        </a>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-@keyframes rotateGradient {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-</style>

@@ -8,7 +8,8 @@ items:
     responsibilities:
       - Developed and maintained Orbit EMR, ensuring regular feature deployments and updates for subscribed health centers.
       - Developed independent modules inside the product like OR, MCH, Dental, and finance reports.
-      - Completed crucial contributions to microservice architecture including SymmetricDS-based near real-time synchronization across remote environments.
+      - Migrated the multi-site sync layer from SymmetricDS to a custom Python ETL pipeline, using Kahn's algorithm for FK-aware ordering and SSH tunneling across three remote sites with no public IPs.
+      - Led remediation of a confirmed server security breach (exposed database port, Mirai botnet compromise), restoring service and hardening infrastructure against recurrence.
       - Optimized system performance by creating database indexes and partitioning, significantly reducing response times.
       - Wrote efficient scripts for generating mock data and performing bulk updates.
       - Integrated Orbit EMR with laboratory, billing, and pharmacy systems.

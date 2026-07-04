@@ -1,5 +1,4 @@
 <script setup>
-import { motion, useInView } from "motion-v";
 import { computed, ref } from "vue";
 
 defineProps({
@@ -8,9 +7,6 @@ defineProps({
     required: true,
   },
 });
-
-const contactRef = ref(null);
-const isInView = useInView(contactRef, { once: true, margin: "-100px" });
 
 const form = ref({
   firstName: "",
@@ -40,171 +36,106 @@ const handleSubmit = () => {
     window.location.href = mailtoHref.value;
   }
 };
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
 </script>
 
 <template>
-  <section id="contact" class="py-20 lg:py-32 bg-gray-50" ref="contactRef">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.div
-        :initial="{ opacity: 0, y: 30 }"
-        :animate="isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }"
-        :transition="{ duration: 0.6 }"
-        class="text-center mb-16"
-      >
-        <span class="text-orange-500 text-lg sm:text-xl font-medium">
-          {{ section.kicker }}
-        </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-          {{ section.title }}
-        </h2>
-        <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-          {{ section.description }}
-        </p>
-      </motion.div>
+  <section id="contact" class="border-t border-ink-900/10 bg-ink-900 py-20 text-paper-100 lg:py-32">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-16 lg:grid-cols-[0.8fr_1fr]">
+        <div>
+          <p class="idx text-copper-300">05 — {{ section.kicker }}</p>
+          <h2 class="mt-4 font-display text-3xl leading-tight text-paper-50 sm:text-4xl">
+            {{ section.title }}
+          </h2>
+          <p class="mt-4 text-lg text-ink-100/70">{{ section.description }}</p>
 
-      <motion.div
-        :variants="containerVariants"
-        :initial="'hidden'"
-        :animate="isInView ? 'visible' : 'hidden'"
-        class="grid lg:grid-cols-2 gap-12"
-      >
-        <motion.div :variants="itemVariants" class="space-y-8">
-          <div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">{{ section.infoTitle }}</h3>
-            <div class="space-y-6">
-              <motion.a
-                v-for="(info, index) in section.info"
-                :key="index"
+          <ul class="mt-10 space-y-5">
+            <li v-for="(info, index) in section.info" :key="index">
+              <a
                 :href="info.href"
                 target="_blank"
                 rel="noopener noreferrer"
-                :whileHover="{ x: 10 }"
-                class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200 group"
+                class="group flex items-center gap-4 border-b border-white/10 pb-4 transition-colors hover:border-copper-300"
               >
-                <div
-                  class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-200"
-                >
-                  <Icon :name="info.icon" class="w-6 h-6 text-orange-500 group-hover:text-white" />
-                </div>
-                <div>
-                  <h4 class="font-semibold text-gray-900">{{ info.title }}</h4>
-                  <p class="text-gray-600">{{ info.value }}</p>
-                </div>
-              </motion.a>
+                <Icon :name="info.icon" class="h-5 w-5 text-copper-300" />
+                <span>
+                  <span class="idx block text-ink-100/60">{{ info.title }}</span>
+                  <span class="text-paper-50 group-hover:text-copper-300">{{ info.value }}</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="mt-10 flex items-center gap-3">
+            <span class="h-2 w-2 rounded-full bg-signal-500" />
+            <div>
+              <p class="font-display text-lg text-paper-50">{{ section.availabilityTitle }}</p>
+              <p class="text-sm text-ink-100/60">{{ section.availabilityDescription }}</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="space-y-6" @submit.prevent="handleSubmit">
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div>
+              <label class="idx mb-2 block text-ink-100/60">{{ section.form.firstNameLabel }}</label>
+              <input
+                v-model="form.firstName"
+                type="text"
+                :placeholder="section.form.firstNamePlaceholder"
+                class="w-full border-b border-white/20 bg-transparent py-2 text-paper-50 placeholder:text-ink-100/30 focus:border-copper-300 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label class="idx mb-2 block text-ink-100/60">{{ section.form.lastNameLabel }}</label>
+              <input
+                v-model="form.lastName"
+                type="text"
+                :placeholder="section.form.lastNamePlaceholder"
+                class="w-full border-b border-white/20 bg-transparent py-2 text-paper-50 placeholder:text-ink-100/30 focus:border-copper-300 focus:outline-none"
+              />
             </div>
           </div>
 
-          <motion.div
-            :animate="{ y: [0, -10, 0] }"
-            :transition="{ duration: 3, repeat: Infinity, ease: 'easeInOut' }"
-            class="relative"
+          <div>
+            <label class="idx mb-2 block text-ink-100/60">{{ section.form.emailLabel }}</label>
+            <input
+              v-model="form.email"
+              type="email"
+              :placeholder="section.form.emailPlaceholder"
+              class="w-full border-b border-white/20 bg-transparent py-2 text-paper-50 placeholder:text-ink-100/30 focus:border-copper-300 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="idx mb-2 block text-ink-100/60">{{ section.form.subjectLabel }}</label>
+            <input
+              v-model="form.subject"
+              type="text"
+              :placeholder="section.form.subjectPlaceholder"
+              class="w-full border-b border-white/20 bg-transparent py-2 text-paper-50 placeholder:text-ink-100/30 focus:border-copper-300 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="idx mb-2 block text-ink-100/60">{{ section.form.messageLabel }}</label>
+            <textarea
+              v-model="form.message"
+              :placeholder="section.form.messagePlaceholder"
+              rows="4"
+              class="w-full resize-none border-b border-white/20 bg-transparent py-2 text-paper-50 placeholder:text-ink-100/30 focus:border-copper-300 focus:outline-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="idx flex items-center gap-2 border border-copper-300 px-6 py-3 text-copper-300 transition-colors hover:bg-copper-300 hover:text-ink-900"
           >
-            <div class="w-full h-64 bg-gradient-to-br from-orange-400 to-purple-500 rounded-2xl opacity-20" />
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="text-center text-gray-700">
-                <h4 class="text-xl font-bold mb-2">{{ section.availabilityTitle }}</h4>
-                <p>{{ section.availabilityDescription }}</p>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        <motion.div :variants="itemVariants">
-          <div class="bg-white shadow-lg border-0 rounded-2xl">
-            <div class="p-8">
-              <form class="space-y-6" @submit.prevent="handleSubmit">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">
-                      {{ section.form.firstNameLabel }}
-                    </label>
-                    <input
-                      v-model="form.firstName"
-                      type="text"
-                      :placeholder="section.form.firstNamePlaceholder"
-                      class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-orange-500 focus:ring-orange-500"
-                    />
-                  </div>
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">
-                      {{ section.form.lastNameLabel }}
-                    </label>
-                    <input
-                      v-model="form.lastName"
-                      type="text"
-                      :placeholder="section.form.lastNamePlaceholder"
-                      class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-orange-500 focus:ring-orange-500"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">
-                    {{ section.form.emailLabel }}
-                  </label>
-                  <input
-                    v-model="form.email"
-                    type="email"
-                    :placeholder="section.form.emailPlaceholder"
-                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-orange-500 focus:ring-orange-500"
-                  />
-                </div>
-
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">
-                    {{ section.form.subjectLabel }}
-                  </label>
-                  <input
-                    v-model="form.subject"
-                    type="text"
-                    :placeholder="section.form.subjectPlaceholder"
-                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-orange-500 focus:ring-orange-500"
-                  />
-                </div>
-
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">
-                    {{ section.form.messageLabel }}
-                  </label>
-                  <textarea
-                    v-model="form.message"
-                    :placeholder="section.form.messagePlaceholder"
-                    rows="5"
-                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-orange-500 focus:ring-orange-500 resize-none"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  class="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-3 flex items-center justify-center gap-2 text-lg font-medium transition-colors duration-200"
-                >
-                  <Icon name="lucide:send" :size="20" />
-                  {{ section.form.submitLabel }}
-                </button>
-              </form>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
+            <Icon name="lucide:send" size="16" />
+            {{ section.form.submitLabel }}
+          </button>
+        </form>
+      </div>
     </div>
   </section>
 </template>

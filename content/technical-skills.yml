@@ -1,6 +1,6 @@
 kicker: Technical Expertise
 title: Skills & Technologies
-description: A comprehensive overview of my technical skills and the modern technologies I use to build scalable, efficient, and robust applications.
+description: The languages, frameworks, and infrastructure I reach for when building something that has to keep working after launch day.
 toolsHeading: DevOps & Tools
 toolsDescription: Essential tools for deployment, scaling, and maintaining applications.
 categories:
@@ -8,108 +8,84 @@ categories:
     title: Python
     icon: devicon:python
     description: Backend development with modern Python frameworks
-    color: from-blue-500 to-blue-700
-    bgGradient: from-blue-50 to-blue-100
+    color: "#B5622A"
     technologies:
       - name: Django
         icon: devicon:djangorest-wordmark
         level: 95
-        color: bg-green-500
       - name: Django REST Framework
         icon: devicon:djangorest-wordmark
         level: 95
-        color: bg-green-600
       - name: FastAPI
         icon: devicon:fastapi-wordmark
         level: 90
-        color: bg-teal-500
       - name: Flask
         icon: devicon:flask-wordmark
         level: 80
-        color: bg-blue-500
   - id: 2
-    title: JavaScript/TypeScript
+    title: JavaScript / TypeScript
     icon: devicon:javascript
     description: Full-stack JavaScript development
-    color: from-yellow-500 to-orange-600
-    bgGradient: from-yellow-50 to-orange-100
+    color: "#1F6F63"
     technologies:
       - name: Node.js
         icon: devicon:nodejs-wordmark
         level: 85
-        color: bg-green-500
       - name: Express
         icon: devicon:express
         level: 80
-        color: bg-gray-700
       - name: Vue.js
         icon: devicon:vuejs-wordmark
         level: 90
-        color: bg-green-400
       - name: Nuxt.js
         icon: devicon:nuxtjs
         level: 85
-        color: bg-green-500
       - name: React
         icon: devicon:react-wordmark
         level: 70
-        color: bg-blue-500
   - id: 3
     title: Go
     icon: devicon:go-wordmark
     description: High-performance backend services
-    color: from-cyan-500 to-blue-600
-    bgGradient: from-cyan-50 to-blue-100
+    color: "#2B2D24"
     technologies:
       - name: Gin Framework
         icon: devicon:go-wordmark
         level: 70
-        color: bg-cyan-500
   - id: 4
     title: Databases
     icon: devicon:azuresqldatabase
     description: Database design and management
-    color: from-purple-500 to-pink-600
-    bgGradient: from-purple-50 to-pink-100
+    color: "#8A4E24"
     technologies:
       - name: PostgreSQL
         icon: devicon:postgresql-wordmark
         level: 85
-        color: bg-blue-600
       - name: MySQL
         icon: devicon:mysql-wordmark
         level: 80
-        color: bg-orange-500
       - name: SQLite
         icon: devicon:sqlite-wordmark
         level: 85
-        color: bg-gray-600
       - name: MongoDB
         icon: devicon:mongodb-wordmark
         level: 75
-        color: bg-green-500
       - name: MariaDB
         icon: devicon:mariadb-wordmark
         level: 75
-        color: bg-blue-500
 tools:
   - name: AWS
     icon: devicon:amazonwebservices-wordmark
-    color: from-orange-400 to-orange-600
     description: Cloud Infrastructure
   - name: Docker
     icon: devicon:docker-wordmark
-    color: from-blue-400 to-blue-600
     description: Containerization
   - name: Nginx
     icon: devicon:nginx
-    color: from-green-400 to-green-600
     description: Web Server
   - name: Github Actions
     icon: devicon:githubactions
-    color: from-green-400 to-green-600
     description: CI/CD
   - name: Git
     icon: devicon:git
-    color: from-red-400 to-red-600
     description: Version Control

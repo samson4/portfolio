@@ -1,6 +1,4 @@
 <script setup>
-import { motion } from "motion-v";
-
 defineProps({
   section: {
     type: Object,
@@ -10,95 +8,39 @@ defineProps({
 </script>
 
 <template>
-  <section id="experience" class="py-20 lg:py-32 bg-gray-50">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.div
-        :initial="{ opacity: 0, y: 30 }"
-        :animate="{ opacity: 1, y: 0 }"
-        :transition="{ duration: 0.6 }"
-        class="text-center mb-16"
-      >
-        <span class="text-orange-500 text-lg sm:text-xl font-medium">
-          {{ section.kicker }}
-        </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-          {{ section.title }}
-        </h2>
-        <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-          {{ section.description }}
-        </p>
-      </motion.div>
+  <section id="experience" class="border-t border-ink-900/10 bg-ink-900 py-20 text-paper-100 lg:py-32">
+    <div class="mx-auto max-w-6xl px-6">
+      <p class="idx text-copper-300">02 — {{ section.kicker }}</p>
+      <h2 class="mt-4 max-w-2xl font-display text-3xl leading-tight sm:text-4xl">
+        {{ section.title }}
+      </h2>
+      <p class="mt-4 max-w-2xl text-lg text-ink-100/70">{{ section.description }}</p>
 
-      <div class="relative max-w-6xl mx-auto">
-        <div class="absolute left-1/2 w-1 h-full bg-gray-200 transform -translate-x-1/2"></div>
+      <!-- Left-rail changelog: distinct from the alternating center-line timeline pattern -->
+      <div class="mt-16 space-y-0 border-l border-white/15 pl-8 sm:pl-10">
+        <div
+          v-for="(item, index) in section.items"
+          :key="`${item.company}-${index}`"
+          class="relative pb-14 last:pb-0"
+        >
+          <span class="absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full bg-copper-500 sm:-left-[calc(2.5rem+5px)]" />
 
-        <div class="space-y-12">
-          <motion.div
-            v-for="(item, index) in section.items"
-            :key="`${item.company}-${index}`"
-            :initial="index % 2 === 0 ? { opacity: 0, x: -100 } : { opacity: 0, x: 100 }"
-            :whileInView="{ opacity: 1, x: 0 }"
-            :viewport="{ once: true }"
-            :transition="{ duration: 0.6, delay: index * 0.1 }"
-            class="relative"
-          >
-            <div
-              class="absolute top-6 left-1/2 w-6 h-6 bg-orange-500 rounded-full transform -translate-x-1/2 z-10"
-            ></div>
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <h3 class="font-display text-xl text-paper-50">{{ item.company }}</h3>
+            <span class="idx text-ink-100/60">{{ item.duration }}</span>
+          </div>
+          <p class="mt-1 text-copper-300">{{ item.position }} · {{ item.location }}</p>
 
-            <div
-              :class="[
-                'relative p-6 rounded-xl shadow-md bg-white',
-                index % 2 === 0
-                  ? 'ml-0 md:mr-[50%] md:pr-16'
-                  : 'ml-0 md:ml-[50%] md:pl-16',
-              ]"
-            >
-              <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                <h3 class="text-xl font-bold text-gray-900">{{ item.company }}</h3>
-                <span class="text-orange-500 font-medium">{{ item.duration }}</span>
-              </div>
-              <div class="flex flex-inline items-center mb-2 gap-4">
-                <h4 class="text-lg font-semibold text-gray-800 mb-3">{{ item.position }}</h4>
-                <div class="text-sm text-gray-500 mb-2">
-                  <span class="font-semibold">{{ item.location }}</span>
-                </div>
-              </div>
-              <ul class="space-y-2 text-gray-600">
-                <li
-                  v-for="(responsibility, responsibilityIndex) in item.responsibilities"
-                  :key="responsibilityIndex"
-                  class="flex items-start"
-                >
-                  <span class="text-orange-500 mr-2 mt-1">•</span>
-                  <span>{{ responsibility }}</span>
-                </li>
-              </ul>
+          <ul class="mt-4 space-y-2 text-ink-100/75">
+            <li v-for="(responsibility, rIndex) in item.responsibilities" :key="rIndex" class="flex gap-3">
+              <span class="idx mt-1 text-ink-100/30">—</span>
+              <span>{{ responsibility }}</span>
+            </li>
+          </ul>
 
-              <div v-if="item.contact" class="mt-4 text-sm text-gray-500">
-                <p>{{ item.contact }}</p>
-              </div>
-            </div>
-          </motion.div>
+          <p v-if="item.contact" class="mt-4 text-sm text-ink-100/60">{{ item.contact }}</p>
         </div>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-@media (min-width: 768px) {
-  .md\\:mr-\\[50\\%\\] {
-    margin-right: 50%;
-  }
-  .md\\:ml-\\[50\\%\\] {
-    margin-left: 50%;
-  }
-  .md\\:pr-16 {
-    padding-right: 4rem;
-  }
-  .md\\:pl-16 {
-    padding-left: 4rem;
-  }
-}
-</style>

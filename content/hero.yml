@@ -1,15 +1,15 @@
-greeting: Hello, I'm
-name: Samson Kebede
-rolePrefix: Experienced
-roleHighlight: Software Developer
-summary: As a seasoned Software developer, I have dedicated years to mastering software development and IT operations, with a particular passion for building scalable and reliable web applications.
+greeting: Samson Kebede
+name: Full-Stack Developer & Infrastructure Builder
+rolePrefix: Based in Addis Ababa, building
+roleHighlight: products that outlast the demo
+summary: I design and ship the unglamorous parts of software that make products trustworthy — sync pipelines that don't lose data, schemas that don't fall over at scale, and interfaces people actually enjoy using. Right now that means hospital systems, AI media infrastructure, and a marketplace connecting brands with AI-generated creators.
 primaryCta:
-  label: About Me
+  label: See how I work
   href: "#about"
 resume:
   label: Resume
-  href: /SamsonKebedeResume.pdf
-  download: SamsonKebedeResume.pdf
+  href: /SamsonKebedeResume2026.pdf
+  download: SamsonKebedeResume2026.pdf
 image:
   src: https://res.cloudinary.com/dpj8cuqfq/image/upload/v1689081074/mhzcubtmxkq3cjingnpu.jpg
   alt: Samson Kebede

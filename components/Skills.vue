@@ -1,136 +1,45 @@
 <script setup>
-import { motion, useInView } from "motion-v";
-import { ref } from "vue";
-
 defineProps({
   section: {
     type: Object,
     required: true,
   },
 });
-
-const skillsSection = ref(null);
-const isInView = useInView(skillsSection, { once: true, margin: "-100px" });
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-const progressVariants = {
-  hidden: { width: 0 },
-  visible: (percentage) => ({
-    width: `${percentage}%`,
-    transition: { duration: 1.5, ease: "easeOut", delay: 0.5 },
-  }),
-};
 </script>
 
 <template>
-  <section id="skills" class="py-20 lg:py-32" ref="skillsSection">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.div
-        :variants="containerVariants"
-        initial="hidden"
-        :animate="isInView ? 'visible' : 'hidden'"
-        class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-      >
-        <motion.div :variants="itemVariants">
-          <span class="text-orange-500 text-lg sm:text-xl font-medium">
-            {{ section.kicker }}
-          </span>
-          <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6 leading-tight"
-          >
+  <section id="approach" class="border-t border-ink-900/10 bg-paper-200/60 py-20 lg:py-32">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <p class="idx text-copper-600">03.1 — {{ section.kicker }}</p>
+          <h2 class="mt-4 font-display text-3xl leading-tight text-ink-900 sm:text-4xl">
             {{ section.title }}
           </h2>
-          <p class="text-gray-600 text-lg mb-8">{{ section.description }}</p>
+          <p class="mt-4 text-lg text-ink-500">{{ section.description }}</p>
 
-          <div class="space-y-8">
-            <motion.div
-              v-for="skill in section.items"
-              :key="skill.name"
-              :variants="itemVariants"
-              class="space-y-3"
-            >
-              <div class="flex items-center gap-3">
-                <Icon :name="skill.icon" class="w-6 h-6 text-gray-700" />
-                <span class="font-semibold text-xl text-gray-900">{{ skill.name }}</span>
-                <span class="ml-auto text-gray-600 font-medium">{{ skill.percentage }}%</span>
-              </div>
-              <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                <motion.div
-                  :variants="progressVariants"
-                  :custom="skill.percentage"
-                  initial="hidden"
-                  :animate="isInView ? 'visible' : 'hidden'"
-                  :class="`h-full rounded-full ${skill.color}`"
-                />
-              </div>
-            </motion.div>
+          <div class="mt-10 flex items-baseline gap-3">
+            <span class="font-display text-6xl text-ink-900">{{ section.experienceValue }}</span>
+            <span class="idx text-ink-500">{{ section.experienceLabel }}</span>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div :variants="itemVariants" class="flex justify-center">
-          <div class="relative">
-            <motion.div
-              :animate="{ rotate: [0, 360] }"
-              :transition="{ duration: 30, repeat: Infinity, ease: 'linear' }"
-              class="w-80 h-80 sm:w-96 sm:h-96 rounded-full border-4 border-dashed border-orange-200"
-            />
-            <motion.div
-              :animate="{ rotate: [360, 0] }"
-              :transition="{ duration: 20, repeat: Infinity, ease: 'linear' }"
-              class="absolute inset-8 rounded-full border-4 border-dashed border-purple-200"
-            />
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="text-center">
-                <motion.div
-                  :animate="{ scale: [1, 1.1, 1] }"
-                  :transition="{ duration: 2, repeat: Infinity, ease: 'easeInOut' }"
-                  class="w-32 h-32 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full flex items-center justify-center mb-4"
-                >
-                  <Icon name="lucide:code" class="w-16 h-16 text-white" />
-                </motion.div>
-                <h3 class="text-2xl font-bold text-gray-900">{{ section.experienceValue }}</h3>
-                <p class="text-gray-600">{{ section.experienceLabel }}</p>
+        <!-- Horizontal meters with oversized numerals on the left, unlike the compact bars in the skills table -->
+        <div class="space-y-8">
+          <div v-for="skill in section.items" :key="skill.name" class="grid grid-cols-[3.5rem_1fr] items-center gap-5 sm:grid-cols-[4.5rem_1fr]">
+            <span class="font-display text-3xl leading-none text-ink-900 sm:text-4xl">{{ skill.percentage }}</span>
+            <div>
+              <div class="flex items-center gap-2 text-ink-900">
+                <Icon :name="skill.icon" class="h-4 w-4" />
+                <span class="font-medium">{{ skill.name }}</span>
+              </div>
+              <div class="mt-2 h-px w-full bg-ink-900/10">
+                <div class="h-px" :style="{ width: `${skill.percentage}%`, backgroundColor: skill.color, height: '2px' }" />
               </div>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-@keyframes rotateBorder {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulseScale {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-</style>

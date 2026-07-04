@@ -1,204 +1,72 @@
 <script setup>
-import { motion, useInView } from "motion-v";
-import { ref } from "vue";
-import { Github } from "lucide-vue-next";
-import { defineComponent, h } from "vue";
-
 defineProps({
   section: {
     type: Object,
     required: true,
   },
 });
-
-const servicesSection = ref(null);
-const isInView = useInView(servicesSection, { once: true, margin: "-100px" });
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-const Card = defineComponent({
-  props: {
-    className: {
-      type: String,
-      default: "",
-    },
-  },
-  setup(props, { slots }) {
-    return () =>
-      h(
-        "div",
-        {
-          class: `bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden ${props.className}`,
-        },
-        slots.default()
-      );
-  },
-});
-
-const CardContent = defineComponent({
-  props: {
-    className: {
-      type: String,
-      default: "",
-    },
-  },
-  setup(props, { slots }) {
-    return () => h("div", { class: `p-8 ${props.className}` }, slots.default());
-  },
-});
-
-const Button = defineComponent({
-  props: {
-    asChild: {
-      type: Boolean,
-      default: false,
-    },
-    variant: {
-      type: String,
-      default: "default",
-    },
-    className: {
-      type: String,
-      default: "",
-    },
-  },
-  setup(props, { slots }) {
-    return () => {
-      const tag = props.asChild ? "a" : "button";
-      let classes = `rounded-full `;
-      if (props.variant === "outline") {
-        classes +=
-          "border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white";
-      }
-      return h(
-        tag,
-        { class: classes + " " + props.className },
-        slots.default ? slots.default() : null
-      );
-    };
-  },
-});
 </script>
 
 <template>
-  <section id="services" class="py-20 lg:py-32" ref="servicesSection">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.div
-        initial="{ opacity: 0, y: 30 }"
-        :animate="isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }"
-        transition="{ duration: 0.6 }"
-        class="text-center mb-16"
-      >
-        <span class="text-orange-500 text-lg sm:text-xl font-medium">
-          {{ section.kicker }}
-        </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-          {{ section.title }}
-        </h2>
-        <p class="text-gray-600 text-lg max-w-4xl mx-auto">
-          {{ section.description }}
-        </p>
-      </motion.div>
+  <section id="work" class="border-t border-ink-900/10 py-20 lg:py-32">
+    <div class="mx-auto max-w-6xl px-6">
+      <p class="idx text-copper-600">04 — {{ section.kicker }}</p>
+      <h2 class="mt-4 max-w-2xl font-display text-3xl leading-tight text-ink-900 sm:text-4xl">
+        {{ section.title }}
+      </h2>
+      <p class="mt-4 max-w-3xl text-lg text-ink-500">{{ section.description }}</p>
 
-      <motion.div
-        :variants="containerVariants"
-        initial="hidden"
-        :animate="isInView ? 'visible' : 'hidden'"
-        class="grid grid-cols-1 lg:grid-cols-2 gap-8"
-      >
-        <motion.div
+      <div class="mt-14 divide-y divide-ink-900/10 border-t border-ink-900/10">
+        <article
           v-for="project in section.items"
           :key="project.id"
-          :variants="itemVariants"
-          class="group"
+          class="grid gap-6 py-10 sm:grid-cols-[100px_1fr] lg:grid-cols-[120px_1fr_220px]"
         >
-          <Card class="h-full">
-            <CardContent class="p-8">
-              <div class="flex items-start gap-6">
-                <motion.div while-hover="{ scale: 1.1, rotate: 10 }" class="text-6xl flex-shrink-0">
-                  {{ project.icon }}
-                </motion.div>
-                <div class="flex-1">
-                  <h3
-                    class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-500 transition-colors duration-200"
-                  >
-                    {{ project.title }}
-                  </h3>
-                  <p class="text-gray-600 mb-6 leading-relaxed">
-                    {{ project.description }}
-                  </p>
+          <div class="flex items-start gap-3 sm:block">
+            <span class="font-display text-4xl text-ink-900/15 sm:text-5xl">{{ String(project.id + 1).padStart(2, '0') }}</span>
+            <span class="text-3xl sm:hidden" aria-hidden="true">{{ project.icon }}</span>
+          </div>
 
-                  <div class="inline-flex flex-wrap gap-3 mb-6">
-                    <span
-                      v-for="tech in project.technologies"
-                      :key="`${project.id}-${tech.name}`"
-                      class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium inline-flex items-center gap-2"
-                    >
-                      <Icon class="w-[30px] h-[30px]" :name="tech.icon" />
-                      {{ tech.name }}
-                    </span>
-                  </div>
+          <div>
+            <div class="flex flex-wrap items-baseline gap-3">
+              <h3 class="font-display text-2xl text-ink-900">{{ project.title }}</h3>
+              <span v-if="project.tagline" class="text-ink-500">{{ project.tagline }}</span>
+            </div>
 
-                  <div class="flex gap-8">
-                    <Button
-                      asChild
-                      variant="outline"
-                      class="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
-                    >
-                      <a
-                        :href="project.githubUrl"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="flex items-center gap-2 mt-2"
-                      >
-                        <Github size="16" />
-                        Source Code
-                      </a>
-                    </Button>
-                    <Button
-                      v-if="project.liveUrl"
-                      asChild
-                      variant="outline"
-                      class="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
-                    >
-                      <a
-                        :href="project.liveUrl"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="flex items-center gap-2 mt-1"
-                      >
-                        <span class="text-lg">🌐</span>
-                        Live Demo
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </motion.div>
+            <p class="mt-3 max-w-2xl leading-relaxed text-ink-700">{{ project.description }}</p>
+
+            <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-ink-500">
+              <span v-for="tech in project.technologies" :key="`${project.id}-${tech.name}`" class="flex items-center gap-1.5">
+                <Icon :name="tech.icon" class="h-4 w-4" />
+                {{ tech.name }}
+              </span>
+            </div>
+          </div>
+
+          <div class="flex flex-row gap-6 sm:col-start-2 lg:col-start-3 lg:flex-col lg:items-end lg:gap-3 lg:text-right">
+            <span v-if="project.status" class="idx text-signal-500">{{ project.status }}</span>
+            <span v-if="project.year" class="idx text-ink-300">{{ project.year }}</span>
+            <a
+              v-if="project.liveUrl"
+              :href="project.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="idx border-b border-copper-500 text-ink-900 hover:text-copper-600"
+            >
+              Live →
+            </a>
+            <a
+              v-if="project.githubUrl"
+              :href="project.githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="idx border-b border-ink-900/30 text-ink-700 hover:border-copper-500 hover:text-copper-600"
+            >
+              Source →
+            </a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-/* Your component-specific styles can go here */
-</style>

@@ -1,0 +1,95 @@
+/* ---------------------------------------------------------------
+   Design system baseline.
+   Palette:  paper (warm ivory) / ink (near-black warm gray)
+             copper (primary accent) / signal (secondary, sparing use)
+   Type:     Fraunces (display) · Manrope (body) · JetBrains Mono (labels)
+------------------------------------------------------------------ */
+
+:root {
+  --paper: #f6f2e9;
+  --ink: #14150f;
+  --copper: #b5622a;
+  --signal: #1f6f63;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Fraunces", serif;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background-color: var(--copper);
+  color: var(--paper);
+}
+
+/* Subtle paper grain so flat fields don't look like default AI-template gradients */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+/* Hairline rule used instead of drop shadows / rounded cards everywhere */
+.rule {
+  border-color: rgba(20, 21, 15, 0.14);
+}
+
+/* Monospace index / eyebrow labels, e.g. "01 — About" */
+.idx {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.blueprint-corner {
+  position: relative;
+}
+.blueprint-corner::before,
+.blueprint-corner::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: var(--copper);
+}
+.blueprint-corner::before {
+  top: -10px;
+  left: -10px;
+  border-top: 2px solid var(--copper);
+  border-left: 2px solid var(--copper);
+}
+.blueprint-corner::after {
+  bottom: -10px;
+  right: -10px;
+  border-bottom: 2px solid var(--copper);
+  border-right: 2px solid var(--copper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

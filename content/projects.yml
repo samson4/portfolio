@@ -1,11 +1,73 @@
-kicker: Projects
-title: What I Offer to Clients
-description: With a focus on software development, AWS solutions, networking, and system administration, I provide a range of services that bring value to your organization and foster an innovative culture. Explore my full-time and side projects for a practical view of what I can provide.
+kicker: Case Files
+title: What I've been building
+description: A mix of full-time infrastructure work and independent products across healthcare, the creator economy, and AI media — plus a handful of earlier builds that shaped how I work today.
 items:
   - id: 0
-    title: Data Platform
+    title: Orbit
+    tagline: Multi-site hospital management system
+    status: In production
+    year: "2023 — now"
+    icon: 🏥
+    description: A hospital management platform running across multiple clinic sites with no shared network. I designed the schema-driven Python ETL pipeline that keeps seven database pairs in sync — FK-aware topological ordering, staging-table bridges, and SSH tunneling — after leading remediation of a serious server security breach.
+    technologies:
+      - icon: devicon:postgresql
+        name: PostgreSQL
+      - icon: devicon:python
+        name: Python
+      - icon: devicon:docker
+        name: Docker
+      - icon: devicon:nginx
+        name: Nginx
+  - id: 1
+    title: InfluencerMkt
+    tagline: AI influencer marketplace
+    status: In development
+    year: "2026"
+    icon: 🎭
+    description: A two-sided marketplace connecting brands with AI-generated influencers. I built the creator-side listing wizard, a dataroom approval queue, TikTok and YouTube channel verification, and Trackdesk affiliate tracking on a FastAPI and Pydantic backend.
+    technologies:
+      - icon: devicon:fastapi
+        name: FastAPI
+      - icon: devicon:react
+        name: React
+      - icon: devicon:typescript
+        name: TypeScript
+      - icon: devicon:postgresql
+        name: PostgreSQL
+  - id: 2
+    title: LuminaAI
+    tagline: AI video & avatar generation
+    status: MVP build
+    year: "2026"
+    icon: 🎬
+    description: An AI video and avatar generation platform built on Nuxt 3 and FastAPI. The core engineering problem was billing — a credit ledger pattern with atomic operations and idempotency keys so generation jobs never double-charge or double-spend.
+    technologies:
+      - icon: devicon:nuxtjs
+        name: Nuxt.js
+      - icon: devicon:fastapi
+        name: FastAPI
+      - icon: devicon:redis
+        name: Redis
+      - icon: devicon:postgresql
+        name: PostgreSQL
+  - id: 3
+    title: WorldCup1vs1
+    tagline: Sports documentary channel
+    status: Live
+    year: "2026"
+    icon: ⚽
+    description: A YouTube channel producing cinematic World Cup documentaries. I write the scripts and run a strict three-cue production system that separates archive footage, AI motion sequences, and AI static graphics for a clean handoff to editing.
+    technologies:
+      - icon: logos:youtube-icon
+        name: YouTube
+      - icon: lucide:film
+        name: ElevenLabs
+  - id: 4
+    title: Database Explorer
+    tagline: Early side project
+    year: "2022"
     icon: 🌐
-    description: I built a database explorer platform using FastAPI, SQLAlchemy, SQLite, and Nuxt. It simplifies SQL and PostgreSQL database management by providing a unified interface for tasks that were previously fragmented. The platform provided introspection, visualization, and schema/data alteration tools, improving developer productivity.
+    description: A database explorer built with FastAPI, SQLAlchemy, SQLite, and Nuxt, giving a single interface for introspection, visualization, and schema or data changes across SQL and PostgreSQL databases.
     githubUrl: https://github.com/samson4/bus-backend
     liveUrl: https://bus-frontend-liard.vercel.app/
     technologies:
@@ -17,10 +79,12 @@ items:
         name: FastAPI
       - icon: devicon:sqlite
         name: SQLite
-  - id: 1
-    title: Online Food Ordering and Delivery
+  - id: 5
+    title: Food Ordering & Delivery
+    tagline: Early side project
+    year: "2021"
     icon: 🍕
-    description: A web app that automates the traditional ordering and delivery of food for restaurant customers. The system incorporates third-party APIs like Mapbox for restaurant locations and Yenepay for payments.
+    description: A web app automating restaurant ordering and delivery, integrating Mapbox for location and Yenepay for payments.
     githubUrl: https://github.com/samson4/foodapp
     technologies:
       - icon: logos:django-icon
@@ -31,10 +95,12 @@ items:
         name: JavaScript
       - icon: devicon:bootstrap
         name: Bootstrap
-  - id: 2
+  - id: 6
     title: HDToday Clone
-    icon: 🎬
-    description: A side project that mimics a movie streaming website built with the MEVN stack and Vuetify. An admin can upload movies that are then displayed for users.
+    tagline: Early side project
+    year: "2021"
+    icon: 🎞️
+    description: A streaming-site clone built on the MEVN stack with Vuetify, with an admin flow for uploading and managing titles.
     githubUrl: https://github.com/samson4/hdtoday
     technologies:
       - icon: devicon:vuejs
@@ -45,10 +111,12 @@ items:
         name: Node.js
       - icon: devicon:mongodb
         name: MongoDB
-  - id: 3
+  - id: 7
     title: Django Blog
+    tagline: Early side project
+    year: "2020"
     icon: 📝
-    description: A reimplementation of a Django Blog tutorial series by Corey M Schafer. I rebuilt the app with Django REST Framework and Vue.js, and added functionality such as search support.
+    description: A rebuild of a classic Django blog tutorial, adding a Django REST Framework API, a Vue.js frontend, and search.
     githubUrl: https://github.com/samson4/Blog-backend
     technologies:
       - icon: logos:django-icon

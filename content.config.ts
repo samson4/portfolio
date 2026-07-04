@@ -55,12 +55,22 @@ export default defineContentConfig({
       schema: z.object({
         kicker: z.string(),
         title: z.string(),
+        pullQuote: z.string().optional(),
         media: z.object({
           src: z.string(),
           type: z.enum(["video", "image"]).default("video"),
           alt: z.string(),
         }),
         paragraphs: z.array(textBlockSchema),
+        ventures: z
+          .array(
+            z.object({
+              name: z.string(),
+              role: z.string(),
+              note: z.string(),
+            })
+          )
+          .optional(),
       }),
     }),
     technicalSkills: defineCollection({
@@ -78,14 +88,14 @@ export default defineContentConfig({
             title: z.string(),
             icon: z.string(),
             description: z.string(),
-            color: z.string(),
-            bgGradient: z.string(),
+            color: z.string().optional(),
+            bgGradient: z.string().optional(),
             technologies: z.array(
               z.object({
                 name: z.string(),
                 icon: z.string(),
                 level: z.number(),
-                color: z.string(),
+                color: z.string().optional(),
               })
             ),
           })
@@ -94,7 +104,7 @@ export default defineContentConfig({
           z.object({
             name: z.string(),
             icon: z.string(),
-            color: z.string(),
+            color: z.string().optional(),
             description: z.string(),
           })
         ),
@@ -149,9 +159,12 @@ export default defineContentConfig({
           z.object({
             id: z.number(),
             title: z.string(),
+            tagline: z.string().optional(),
+            status: z.string().optional(),
+            year: z.string().optional(),
             description: z.string(),
             icon: z.string(),
-            githubUrl: z.string(),
+            githubUrl: z.string().optional(),
             liveUrl: z.string().optional(),
             technologies: z.array(
               z.object({

@@ -1,17 +1,32 @@
-title: I Craft Powerful Infrastructure and empower developers
-kicker: I'm a Builder
+kicker: The Builder
+title: One engineer, four live products, one habit of finishing things
+pullQuote: I don't build demos. I build the sync job that runs at 3am, the schema that survives a pivot, and the interface someone opens without dreading it.
 media:
   src: https://res.cloudinary.com/dpj8cuqfq/video/upload/v1748821504/kx9ioyyprzxej8vmuphf.mp4
   type: video
   alt: About Samson
 paragraphs:
-  - prefix: With 4+ years of hands-on experience in software development, I specialize in crafting robust web applications and cloud infrastructure using Python, JavaScript, and Go. My journey began as a teenage coder and evolved into a passion for solving real-world problems through technology.
+  - prefix: With 4+ years of hands-on experience, I specialize in robust web applications and cloud infrastructure using Python, JavaScript, and Go. My journey began as a teenage coder chasing curiosity and turned into a career built on solving real, often unglamorous, problems.
+  - prefix: At any given time I'm usually running more than one product. That's not scattered attention — it's how I stay sharp across the full stack, from PostgreSQL internals to the pixel-level detail of a landing page.
   - prefix: I founded and manage
     linkLabel: Addis Tech Jobs
     linkHref: https://www.linkedin.com/company/addis-tech-jobs/
-    suffix: a community initiative that aggregates IT opportunities from LinkedIn, Telegram, and other platforms. To date, the page has attracted 3,500+ developers and followers by curating and sharing verified job openings completely free of charge.
+    suffix: a free community initiative that has connected 3,500+ developers and followers with verified IT opportunities across LinkedIn, Telegram, and beyond.
   - prefix: As a technical writer, I publish
     linkLabel: tutorials and articles
     linkHref: https://medium.com/@samsonkebede4
-    suffix: on Medium covering Python, Django, and AWS. My content focuses on practical solutions, helping developers overcome challenges in backend development and cloud architecture.
-  - prefix: Beyond code, I mentor aspiring developers through workshops and speaking engagements, advocating for equal opportunities in Ethiopia's growing tech ecosystem.
+    suffix: on Medium covering Python, Django, and AWS — practical write-ups aimed at developers stuck on the same backend and cloud problems I've already solved.
+  - prefix: Beyond code, I mentor aspiring developers through workshops and speaking engagements, advocating for equal access to opportunity in Ethiopia's growing tech ecosystem.
+ventures:
+  - name: Orbit
+    role: Hospital management system
+    note: Multi-site EMR with a custom FK-aware ETL pipeline syncing seven database pairs with zero public IPs.
+  - name: InfluencerMkt
+    role: AI influencer marketplace
+    note: Creator-side listing flows, verification, and affiliate tracking for a two-sided marketplace.
+  - name: LuminaAI
+    role: AI video & avatar generation
+    note: Nuxt + FastAPI platform with a credit ledger built for atomic, idempotent billing.
+  - name: WorldCup1vs1
+    role: Sports documentary channel
+    note: Cinematic World Cup storytelling with a structured production pipeline for archive and AI-generated footage.
