@@ -1,6 +1,5 @@
-kicker: The Builder
 title: One engineer, four live products, one habit of finishing things
-pullQuote: I don't build demos. I build the sync job that runs at 3am, the schema that survives a pivot, and the interface someone opens without dreading it.
+kicker: The Builder
 media:
   src: https://res.cloudinary.com/dpj8cuqfq/video/upload/v1748821504/kx9ioyyprzxej8vmuphf.mp4
   type: video
@@ -17,6 +16,7 @@ paragraphs:
     linkHref: https://medium.com/@samsonkebede4
     suffix: on Medium covering Python, Django, and AWS — practical write-ups aimed at developers stuck on the same backend and cloud problems I've already solved.
   - prefix: Beyond code, I mentor aspiring developers through workshops and speaking engagements, advocating for equal access to opportunity in Ethiopia's growing tech ecosystem.
+pullQuote: I don't build demos. I build the sync job that runs at 3am, the schema that survives a pivot, and the interface someone opens without dreading it.
 ventures:
   - name: Orbit
     role: Hospital management system
@@ -27,6 +27,3 @@ ventures:
   - name: LuminaAI
     role: AI video & avatar generation
     note: Nuxt + FastAPI platform with a credit ledger built for atomic, idempotent billing.
-  - name: WorldCup1vs1
-    role: Sports documentary channel
-    note: Cinematic World Cup storytelling with a structured production pipeline for archive and AI-generated footage.
