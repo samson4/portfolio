@@ -12,7 +12,7 @@ items:
       - Optimized system performance by creating database indexes and partitioning, significantly reducing response times.
       - Wrote efficient scripts for generating mock data and performing bulk updates.
       - Integrated Orbit EMR with laboratory, billing, and pharmacy systems.
-  - company: braincode sp z o
+  - company: BrainCode Sp. z o.o.
     position: Full Stack Developer
     duration: 01/2026 - Present
     location: Remote, Poland
