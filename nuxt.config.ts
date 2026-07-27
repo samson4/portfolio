@@ -63,6 +63,7 @@ export default defineNuxtConfig({
 
   modules:[
     '@nuxtjs/tailwindcss',
+    '@vercel/analytics',
     'nuxt-icon',
     '@nuxt/content',
     'nuxt-component-meta',
