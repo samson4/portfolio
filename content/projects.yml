@@ -52,7 +52,7 @@ items:
   - id: 4
     title: Database Explorer
     tagline: Early side project
-    year: "2022"
+    year: "2023"
     icon: 🌐
     description: A database explorer built with FastAPI, SQLAlchemy, SQLite, and Nuxt, giving a single interface for introspection, visualization, and schema or data changes across SQL and PostgreSQL databases.
     githubUrl: https://github.com/samson4/bus-backend
@@ -60,12 +60,17 @@ items:
     technologies:
       - icon: devicon:nuxtjs
         name: Nuxt.js
-      - icon: devicon:vuejs
-        name: Vue.js
       - icon: devicon:fastapi
         name: FastAPI
       - icon: devicon:sqlite
         name: SQLite
+      - icon: devicon:postgresql
+        name: PostgreSQL
+      - icon: devicon:mysql
+        name: MySQL
+      - icon: devicon:mariadb
+        name: MariaDB
+    status: MVP
   - id: 5
     title: Food Ordering & Delivery
     tagline: Early side project
