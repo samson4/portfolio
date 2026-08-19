@@ -1,6 +1,15 @@
 title: Professional Experience
 description: My career path through various roles and responsibilities in the tech industry.
 items:
+  - company: BrainCode Sp. z o.o.
+    position: Full Stack Developer
+    duration: 01/2026 - Present
+    location: Remote, Poland
+    responsibilities:
+      - Lead the end-to-end development of a specialized marketplace connecting brands with AI-generated influencers, leveraging FastAPI, SQLAlchemy, and Pydantic to build a highly scalable backend(https://www.influencermkt.com/)
+      - Build dual-sided marketplace including creator listing and tracking flows with a structured buyer journey spanning asset discovery, secure communication, and post-payment escrow transfers.
+      - Designed robust backend schemas to handle multi-tenant relationships and diverse media assets, ensuring seamless integration between AI models and user-facing dashboards.
+      - Implemented complex workflows for AI avatar, video, and image generation, streamlining the creation of synthetic media through structured Pydantic schemas and API orchestrations
   - company: Orbit Health
     position: Full Stack Developer
     duration: 09/2023 - Present
@@ -12,14 +21,6 @@ items:
       - Optimized system performance by creating database indexes and partitioning, significantly reducing response times.
       - Wrote efficient scripts for generating mock data and performing bulk updates.
       - Integrated Orbit EMR with laboratory, billing, and pharmacy systems.
-  - company: BrainCode Sp. z o.o.
-    position: Full Stack Developer
-    duration: 01/2026 - Present
-    location: Remote, Poland
-    responsibilities:
-      - Lead the end-to-end development of a specialized marketplace connecting brands with AI-generated influencers, leveraging FastAPI, SQLAlchemy, and Pydantic to build a highly scalable backend
-      - Implemented complex workflows for AI avatar, video, and image generation, streamlining the creation of synthetic media through structured Pydantic schemas and API orchestrations
-      - Designed robust backend schemas to handle multi-tenant relationships and diverse media assets, ensuring seamless integration between AI models and user-facing dashboards.
   - company: Paramount Students
     position: Vue.js Developer
     duration: 04/2025 - 09/2025

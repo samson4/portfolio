@@ -1,8 +1,4 @@
-kicker: Technical Expertise
 title: Skills & Technologies
-description: The languages, frameworks, and infrastructure I reach for when building something that has to keep working after launch day.
-toolsHeading: DevOps & Tools
-toolsDescription: Essential tools for deployment, scaling, and maintaining applications.
 categories:
   - id: 1
     title: Python
@@ -17,8 +13,9 @@ categories:
         icon: devicon:djangorest-wordmark
         level: 95
       - name: FastAPI
-        icon: devicon:fastapi-wordmark
-        level: 90
+        icon: devicon:fastapi
+        level: 95
+        color: ""
       - name: Flask
         icon: devicon:flask-wordmark
         level: 80
@@ -73,6 +70,8 @@ categories:
       - name: MariaDB
         icon: devicon:mariadb-wordmark
         level: 75
+description: The languages, frameworks, and infrastructure I reach for when building something that has to keep working after launch day.
+kicker: Technical Expertise
 tools:
   - name: AWS
     icon: devicon:amazonwebservices-wordmark
@@ -89,3 +88,5 @@ tools:
   - name: Git
     icon: devicon:git
     description: Version Control
+toolsDescription: Essential tools for deployment, scaling, and maintaining applications.
+toolsHeading: DevOps & Tools
