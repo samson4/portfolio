@@ -70,7 +70,6 @@ categories:
       - name: MariaDB
         icon: devicon:mariadb-wordmark
         level: 75
-description: The languages, frameworks, and infrastructure I reach for when building something that has to keep working after launch day.
 kicker: Technical Expertise
 tools:
   - name: AWS

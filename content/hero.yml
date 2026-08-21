@@ -22,4 +22,4 @@ socials:
   - label: GitHub
     href: https://github.com/samson4
     icon: lucide:github
-summary: I design and ship the unglamorous parts of software that make products trustworthy — sync pipelines that don't lose data, schemas that don't fall over at scale, and interfaces people actually enjoy using. Right now that means hospital systems, AI media infrastructure, and a marketplace connecting brands with AI-generated creators.
+summary: I’m a full-stack software engineer specializing in Python, Javascript, Go and complex database architecture. My work ranges from building offline-first infrastructure for remote hospital EMRs to orchestrating complex generative media pipelines for AI Image/Video generation and AI Influencer marketplaces.

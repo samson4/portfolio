@@ -15,8 +15,7 @@ paragraphs:
     linkLabel: tutorials and articles
     linkHref: https://medium.com/@samsonkebede4
     suffix: on Medium covering Python, Django, and AWS — practical write-ups aimed at developers stuck on the same backend and cloud problems I've already solved.
-  - prefix: Beyond code, I mentor aspiring developers through workshops and speaking engagements, advocating for equal access to opportunity in Ethiopia's growing tech ecosystem.
-pullQuote: I don't build demos. I build the sync job that runs at 3am, the schema that survives a pivot, and the interface someone opens without dreading it.
+pullQuote: ""
 ventures:
   - name: Orbit
     role: Hospital management system

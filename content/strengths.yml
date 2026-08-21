@@ -1,6 +1,4 @@
-kicker: Building and Transforming
 title: I stay sharp by working across the whole stack, not just one layer of it
-description: Jumping between infrastructure, backend, and interface work isn't a distraction from depth — it's how I keep my instincts current on all three.
 experienceLabel: Experience
 experienceValue: 4+ Years
 items:
@@ -20,3 +18,4 @@ items:
     percentage: 75
     color: "#9C9E93"
     icon: lucide:users
+kicker: Building and Transforming
