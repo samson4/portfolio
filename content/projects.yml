@@ -45,6 +45,8 @@ items:
         name: Nuxt.js
       - icon: devicon:fastapi
         name: FastAPI
+      - icon: devicon:huggingface
+        name: Hugging Face
       - icon: devicon:redis
         name: Redis
       - icon: devicon:postgresql
@@ -54,7 +56,7 @@ items:
     tagline: Early side project
     year: "2023"
     icon: 🌐
-    description: A database explorer built with FastAPI, SQLAlchemy, SQLite, and Nuxt, giving a single interface for introspection, visualization, and schema or data changes across SQL and PostgreSQL databases.
+    description: A database explorer built with FastAPI, SQLAlchemy, PostgreSQL, and Nuxt, giving a single interface for introspection, visualization, and schema or data changes across SQL and PostgreSQL databases.
     githubUrl: https://github.com/samson4/bus-backend
     liveUrl: https://bus-frontend-liard.vercel.app/
     technologies:
@@ -62,6 +64,8 @@ items:
         name: Nuxt.js
       - icon: devicon:fastapi
         name: FastAPI
+      - icon: devicon:sqlalchemy
+        name: SQLAlchemy
       - icon: devicon:sqlite
         name: SQLite
       - icon: devicon:postgresql
@@ -76,7 +80,7 @@ items:
     tagline: Early side project
     year: "2021"
     icon: 🍕
-    description: A web app automating restaurant ordering and delivery, integrating Mapbox for location and Yenepay for payments.
+    description: A web app automating restaurant ordering and delivery, integrating Mapbox for  restaurant locations and Yenepay for payment gateway.
     githubUrl: https://github.com/samson4/foodapp
     technologies:
       - icon: logos:django-icon
@@ -108,7 +112,7 @@ items:
     tagline: Early side project
     year: "2020"
     icon: 📝
-    description: A rebuild of a classic Django blog tutorial, adding a Django REST Framework API, a Vue.js frontend, and search.
+    description: A rebuild of the classic Corey Schafer's Django blog tutorial, adding a Django REST Framework API, a Vue.js frontend, and search.
     githubUrl: https://github.com/samson4/Blog-backend
     technologies:
       - icon: logos:django-icon
