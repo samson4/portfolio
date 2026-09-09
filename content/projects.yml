@@ -34,7 +34,7 @@ items:
       - icon: devicon:postgresql
         name: PostgreSQL
   - id: 2
-    title: LuminaAI
+    title: MEDALAI
     tagline: AI video & avatar generation
     status: MVP build
     year: "2026"

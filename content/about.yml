@@ -23,6 +23,6 @@ ventures:
   - name: InfluencerMkt
     role: AI influencer marketplace
     note: Creator-side listing flows, verification, and affiliate tracking for a two-sided marketplace.
-  - name: LuminaAI
+  - name: MEDALAI
     role: AI video & avatar generation
     note: Nuxt + FastAPI platform with a credit ledger built for atomic, idempotent billing.
