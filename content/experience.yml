@@ -1,7 +1,7 @@
 title: Professional Experience
 description: My career path through various roles and responsibilities in the tech industry.
 items:
-  - company: BrainCode Sp. z o.o.
+  - company: BrainCode Sp. z o.o.(viralcut.io)
     position: Full Stack Developer
     duration: 01/2026 - Present
     location: Remote, Poland
@@ -9,7 +9,7 @@ items:
       - Lead the end-to-end development of a specialized marketplace connecting brands with AI-generated influencers, leveraging FastAPI, SQLAlchemy, and Pydantic to build a highly scalable backend(https://www.influencermkt.com/)
       - Build dual-sided marketplace including creator listing and tracking flows with a structured buyer journey spanning asset discovery, secure communication, and post-payment escrow transfers.
       - Designed robust backend schemas to handle multi-tenant relationships and diverse media assets, ensuring seamless integration between AI models and user-facing dashboards.
-      - Implemented complex workflows for AI avatar, video, and image generation, streamlining the creation of synthetic media through structured Pydantic schemas and API orchestrations
+      - Implemented complex workflows for AI avatar, video, and image generation (viralcut.io), streamlining synthetic media creation through structured schema validations and API orchestration. Tech Stack Django, Tailwindcss.
   - company: Orbit Health
     position: Full Stack Developer
     duration: 09/2023 - Present

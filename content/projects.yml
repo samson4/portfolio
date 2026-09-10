@@ -35,11 +35,11 @@ items:
         name: PostgreSQL
   - id: 2
     title: MEDALAI
-    tagline: AI video & avatar generation
+    tagline: AI Image, video & avatar generation
     status: MVP build
     year: "2026"
     icon: 🎬
-    description: An AI video and avatar generation platform built on Nuxt 3 and FastAPI.A credit ledger pattern with atomic operations and idempotency keys so generation jobs never double-charge or double-spend.
+    description: "An AI Image, video and avatar generation platform built on Nuxt 3 and FastAPI that fans out asset generation jobs to multiple AI providers (HuggingFace FLUX models primarily for development stage and fal.ai for production with Replicate as a fallback). Implemented a credit ledger pattern with atomic operations and idempotency keys so generation jobs never double-charge or double-spend. Stack: Nuxt.js, FastAPI, Hugging Face Inference APIs, Redis, BullMQ, PostgreSQL."
     technologies:
       - icon: devicon:nuxtjs
         name: Nuxt.js
