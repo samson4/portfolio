@@ -15,11 +15,9 @@ items:
         name: Docker
       - icon: devicon:nginx
         name: Nginx
-      - icon: i-material-icon-theme:vue
+      - icon: devicon:vuejs
         name: Vue.js
-      - icon: i-devicon:express
-        name: Express.js
-      - icon: i-selfhst:node-js
+      - icon: devicon:nodejs
         name: Node.js
   - id: 1
     title: InfluencerMkt
