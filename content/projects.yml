@@ -11,12 +11,16 @@ items:
     technologies:
       - icon: devicon:postgresql
         name: PostgreSQL
-      - icon: devicon:python
-        name: Python
       - icon: devicon:docker
         name: Docker
       - icon: devicon:nginx
         name: Nginx
+      - icon: i-material-icon-theme:vue
+        name: Vue.js
+      - icon: i-devicon:express
+        name: Express.js
+      - icon: i-selfhst:node-js
+        name: Node.js
   - id: 1
     title: InfluencerMkt
     tagline: AI influencer marketplace
@@ -33,6 +37,7 @@ items:
         name: TypeScript
       - icon: devicon:postgresql
         name: PostgreSQL
+    liveUrl: https://www.influencermkt.com
   - id: 2
     title: MEDALAI
     tagline: AI Image, video & avatar generation
